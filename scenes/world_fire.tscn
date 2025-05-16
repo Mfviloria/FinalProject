@@ -1,0 +1,130 @@
+[gd_scene load_steps=14 format=3 uid="uid://c163jcqhx0lj8"]
+
+[ext_resource type="Texture2D" uid="uid://clhffro6bl8au" path="res://sprites/Images/ChatGPT Image May 14, 2025, 08_50_34 PM.png" id="1_bw4ud"]
+[ext_resource type="Script" uid="uid://ccqsuojk50i6t" path="res://Scripts/world_fire.gd" id="1_qejwn"]
+[ext_resource type="PackedScene" uid="uid://dmhsetshjv1by" path="res://Player.tscn" id="2_ane1y"]
+[ext_resource type="Texture2D" uid="uid://d3qemd3wnvi5c" path="res://sprites/Explosion:Fire/PNG/Fire/Fire1.png" id="3_ejj5y"]
+[ext_resource type="Texture2D" uid="uid://c3kasvb355w0x" path="res://sprites/Explosion:Fire/PNG/Fire/Fire2.png" id="4_5226u"]
+[ext_resource type="Texture2D" uid="uid://dswuac5ikdvoi" path="res://sprites/Explosion:Fire/PNG/Fire/Fire3.png" id="5_y1c0a"]
+[ext_resource type="Texture2D" uid="uid://4xbpus2pfbse" path="res://sprites/Explosion:Fire/PNG/Fire/Fire4.png" id="6_3h0kf"]
+[ext_resource type="Texture2D" uid="uid://bthotx7s0xh1h" path="res://sprites/Explosion:Fire/PNG/Fire/Fire5.png" id="7_iew44"]
+[ext_resource type="Texture2D" uid="uid://dv4k4eg1a1brr" path="res://sprites/Explosion:Fire/PNG/Fire/Fire6.png" id="8_a25eg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdf0i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ejj5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5226u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y1c0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3h0kf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_iew44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a25eg")
+}],
+"loop": true,
+"name": &"Fire",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dagg"]
+size = Vector2(849.75, 28.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2jmr"]
+size = Vector2(1162, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qejwn"]
+size = Vector2(121, 95.8447)
+
+[node name="WorldFire" type="Node2D"]
+script = ExtResource("1_qejwn")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 306)
+scale = Vector2(1.12695, 1.04004)
+texture = ExtResource("1_bw4ud")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(728, 585)
+scale = Vector2(1.8125, 1.85938)
+sprite_frames = SubResource("SpriteFrames_cdf0i")
+animation = &"Fire"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(886, 499)
+rotation = 0.637283
+scale = Vector2(1.8125, 1.85938)
+sprite_frames = SubResource("SpriteFrames_cdf0i")
+animation = &"Fire"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(984, 464)
+rotation = -1.23008
+scale = Vector2(1.8125, 1.85938)
+sprite_frames = SubResource("SpriteFrames_cdf0i")
+animation = &"Fire"
+frame_progress = 0.363377
+
+[node name="Node2D" parent="." instance=ExtResource("2_ane1y")]
+position = Vector2(-11, 220)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(260.125, 273.75)
+shape = SubResource("RectangleShape2D_7dagg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(581, 779)
+shape = SubResource("RectangleShape2D_p2jmr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(730.5, 661.875)
+shape = SubResource("RectangleShape2D_qejwn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(843, 557)
+rotation = 0.658535
+shape = SubResource("RectangleShape2D_qejwn")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1050.33, 481.895)
+rotation = -1.21535
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_qejwn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_top = 2.0
+offset_right = 1158.0
+offset_bottom = 651.0
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 6.0
+offset_right = 141.0
+offset_bottom = 42.0
+text = "Volver"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

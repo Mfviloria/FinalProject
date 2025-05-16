@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccg7unh6uto8s"]
+
+[ext_resource type="Texture2D" uid="uid://b1e6t25jke4uo" path="res://sprites/Images/background.jpg" id="1_4eyuj"]
+[ext_resource type="Script" uid="uid://dlfbwdo4pqg62" path="res://Scripts/world_1.gd" id="1_cmxnd"]
+[ext_resource type="Texture2D" uid="uid://btfxh7d3pdqoo" path="res://sprites/Images/platform.png" id="2_cmxnd"]
+[ext_resource type="PackedScene" uid="uid://dmhsetshjv1by" path="res://Player.tscn" id="5_kwwa1"]
+[ext_resource type="PackedScene" uid="uid://dp16o70o44cpm" path="res://scenes/door.tscn" id="7_ol31w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77kw0"]
+size = Vector2(10381, 173)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol31w"]
+size = Vector2(404, 666)
+
+[node name="World1" type="Node2D"]
+script = ExtResource("1_cmxnd")
+
+[node name="Door" parent="." instance=ExtResource("7_ol31w")]
+position = Vector2(839, -96)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1150, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(577.5, 234)
+scale = Vector2(1.91013, 2.29428)
+texture = ExtResource("1_4eyuj")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1150, 0)
+
+[node name="Ground" type="StaticBody2D" parent="ParallaxBackground/ParallaxLayer2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/Ground"]
+position = Vector2(577, 289.5)
+scale = Vector2(0.194698, 0.153862)
+texture = ExtResource("2_cmxnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/ParallaxLayer2/Ground"]
+position = Vector2(2339, 566)
+shape = SubResource("RectangleShape2D_77kw0")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="ParallaxBackground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/RigidBody2D"]
+position = Vector2(-139, 323)
+shape = SubResource("RectangleShape2D_ol31w")
+
+[node name="Node2D" parent="." instance=ExtResource("5_kwwa1")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 1158.0
+offset_bottom = 651.0
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 31.0
+offset_top = 27.0
+offset_right = 132.0
+offset_bottom = 61.0
+text = "Volver"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

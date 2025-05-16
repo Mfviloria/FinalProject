@@ -1,0 +1,127 @@
+[gd_scene load_steps=14 format=3 uid="uid://dmhsetshjv1by"]
+
+[ext_resource type="Script" uid="uid://dkcg4v3aim68m" path="res://Scripts/Selected.gd" id="1_kne1u"]
+[ext_resource type="Script" uid="uid://dx0ox28o217wn" path="res://Scripts/PersonajeLocalWorld1.gd" id="2_e80uo"]
+[ext_resource type="Texture2D" uid="uid://wstt32ef83yi" path="res://sprites/player/Infantryman/Idle.png" id="3_cxr5p"]
+[ext_resource type="Texture2D" uid="uid://bghpofiiuorjl" path="res://sprites/Images/lifes.png" id="4_e80uo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77kw0"]
+atlas = ExtResource("3_cxr5p")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol31w"]
+atlas = ExtResource("3_cxr5p")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypmbo"]
+atlas = ExtResource("3_cxr5p")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5q77"]
+atlas = ExtResource("3_cxr5p")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j51am"]
+atlas = ExtResource("3_cxr5p")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6deva"]
+atlas = ExtResource("3_cxr5p")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tdg3f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77kw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol31w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypmbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5q77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j51am")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6deva")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqjt"]
+size = Vector2(87, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ncpa"]
+size = Vector2(87.75, 172)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kne1u")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_e80uo")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(570, 323)
+position_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(240.75, 334.5)
+scale = Vector2(2.19141, 2.30469)
+sprite_frames = SubResource("SpriteFrames_tdg3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(239.5, 395)
+shape = SubResource("RectangleShape2D_dtqjt")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(239.125, 396)
+shape = SubResource("RectangleShape2D_5ncpa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterBody2D/CanvasLayer"]
+offset_left = -27.0
+offset_top = 8.0
+offset_right = 96.0
+offset_bottom = 123.0
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody2D/CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="CharacterBody2D/CanvasLayer/HBoxContainer/TextureRect"]
+position = Vector2(101, 85)
+scale = Vector2(0.125, 0.119444)
+texture = ExtResource("4_e80uo")
+
+[node name="TextureRect2" type="TextureRect" parent="CharacterBody2D/CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="CharacterBody2D/CanvasLayer/HBoxContainer/TextureRect2"]
+position = Vector2(129, 85)
+scale = Vector2(0.125, 0.119444)
+texture = ExtResource("4_e80uo")
+
+[node name="TextureRect3" type="TextureRect" parent="CharacterBody2D/CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="CharacterBody2D/CanvasLayer/HBoxContainer/TextureRect3"]
+position = Vector2(158, 85)
+scale = Vector2(0.125, 0.119444)
+texture = ExtResource("4_e80uo")
+
+[node name="TextureRect4" type="TextureRect" parent="CharacterBody2D/CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="CharacterBody2D/CanvasLayer/HBoxContainer/TextureRect4"]
+position = Vector2(187, 85)
+scale = Vector2(0.125, 0.119444)
+texture = ExtResource("4_e80uo")

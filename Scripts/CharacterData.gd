@@ -1,0 +1,6 @@
+extends Resource
+
+class_name CharacterData
+
+@export var key: String
+@export var Imagen: Texture2D
