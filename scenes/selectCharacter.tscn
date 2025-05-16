@@ -86,7 +86,7 @@ text = "Volver"
 [connection signal="pressed" from="Infrantyman" to="." method="_on_infrantyman_pressed"]
 [connection signal="pressed" from="Destroyer" to="." method="_on_destroyer_pressed"]
 [connection signal="pressed" from="Swordsman" to="." method="_on_swordsman_pressed"]
+[connection signal="pressed" from="Select" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Select" to="." method="_on_select_pressed"]
 [connection signal="pressed" from="Select" to="." method="Select"]
-[connection signal="pressed" from="Select" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

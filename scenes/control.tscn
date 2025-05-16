@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bx07hvmw26mm"]
 
 [ext_resource type="Script" uid="uid://bp6dp6c6chog6" path="res://Scripts/control.gd" id="1_r67kn"]
-[ext_resource type="Texture2D" uid="uid://l8u23sphfedx" path="res://sprites/Images/ChatGPT Image May 14, 2025, 07_54_25 PM.png" id="2_r67kn"]
+[ext_resource type="Texture2D" uid="uid://cl05cg8ubeyhi" path="res://sprites/Images/ChatGPT Image May 14, 2025, 07_54_25 PM.png" id="2_r67kn"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
