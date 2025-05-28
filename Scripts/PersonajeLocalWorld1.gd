@@ -12,6 +12,7 @@ var health = 4
 var death = false
 var death_anim_played = false
 @export var attack = false
+
 func _ready() -> void:
 	var hearts_parents = $CanvasLayer/HBoxContainer
 	for child in hearts_parents.get_children():
@@ -25,7 +26,6 @@ func take_damage():
 		
 func update_heart_display():
 	for i in range(hearts_list.size()):
-		print(health)
 		hearts_list[i].visible = i < health
 	if health <= 0:
 		death = true
