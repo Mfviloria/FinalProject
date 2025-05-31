@@ -1,5 +1,6 @@
 extends CharacterBody2D
-
+var knockback_timer = 0.0
+var knockback_force = Vector2.ZERO
 @export var _move_speed = 300
 @export var _jump_speed = 490
 @onready var animated_sprite = $AnimatedSprite2D
@@ -11,6 +12,9 @@ var hearts_list: Array[TextureRect]
 var health = 4
 var death = false
 var death_anim_played = false
+
+
+
 @export var attack = false
 
 func _ready() -> void:
@@ -19,7 +23,14 @@ func _ready() -> void:
 		hearts_list.append(child)
 	print(hearts_list)
 	
-func take_damage():
+func take_damage(enemyposx):
+	if position.x < enemyposx:
+		knockback_force = Vector2(300, -100)
+	else:
+		knockback_force = Vector2(-300, -130)
+	knockback_timer = 0.2  # duración en segundos del retroceso
+
+		
 	if health > 0:
 		health -= 1
 		update_heart_display()
@@ -32,7 +43,11 @@ func update_heart_display():
 
 func _physics_process(delta):
 	jump(delta)
-	move_x()
+	if knockback_timer > 0:
+		velocity = knockback_force
+		knockback_timer -= delta
+	else:
+		move_x()
 	flip()
 	move_and_slide()
 	animation()
@@ -67,12 +82,12 @@ func animation():
 		else:
 			animated_sprite.play("idle")
 	else:
-		animated_sprite.play("jump")
+		animated_sprite.play("idle")
 
 func revivir():
 	health = 4
 	update_heart_display()
-	get_tree().change_scene_to_file("res://scenes/world_fire.tscn")
+	get_tree().reload_current_scene()
 	
 
 func jump(delta):
@@ -83,9 +98,15 @@ func jump(delta):
 		velocity.y += gravity * delta
 
 func flip():
-	if (is_facing_right and velocity.x < 0) or (not is_facing_right and velocity.x > 0):
-		animated_sprite.flip_h = not animated_sprite.flip_h
-		is_facing_right = not is_facing_right
+	if knockback_timer > 0 or att or death:
+		return
+	var input_axis = Input.get_axis("move_left", "move_right")
+	if input_axis < 0 and is_facing_right:
+		animated_sprite.flip_h = true
+		is_facing_right = false
+	elif input_axis > 0 and not is_facing_right:
+		animated_sprite.flip_h = false
+		is_facing_right = true
 
 func move_x():
 	var input_axis = Input.get_axis("move_left", "move_right")

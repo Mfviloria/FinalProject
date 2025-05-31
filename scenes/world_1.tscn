@@ -15,9 +15,6 @@ size = Vector2(404, 666)
 [node name="World1" type="Node2D"]
 script = ExtResource("1_cmxnd")
 
-[node name="Door" parent="." instance=ExtResource("7_ol31w")]
-position = Vector2(839, -96)
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -27,6 +24,9 @@ motion_mirroring = Vector2(1150, 0)
 position = Vector2(577.5, 234)
 scale = Vector2(1.91013, 2.29428)
 texture = ExtResource("1_4eyuj")
+
+[node name="Door" parent="ParallaxBackground" instance=ExtResource("7_ol31w")]
+position = Vector2(922, -98)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1150, 0)

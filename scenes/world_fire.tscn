@@ -1,14 +1,23 @@
-[gd_scene load_steps=14 format=3 uid="uid://c163jcqhx0lj8"]
+[gd_scene load_steps=33 format=3 uid="uid://c163jcqhx0lj8"]
 
-[ext_resource type="Texture2D" uid="uid://clhffro6bl8au" path="res://sprites/Images/ChatGPT Image May 14, 2025, 08_50_34 PM.png" id="1_bw4ud"]
 [ext_resource type="Script" uid="uid://ccqsuojk50i6t" path="res://Scripts/world_fire.gd" id="1_qejwn"]
 [ext_resource type="PackedScene" uid="uid://dmhsetshjv1by" path="res://Player.tscn" id="2_ane1y"]
+[ext_resource type="Texture2D" uid="uid://b7ichd21cv8yd" path="res://sprites/Mundos (2)/mundo_deforest.png" id="2_qejwn"]
 [ext_resource type="Texture2D" uid="uid://d3qemd3wnvi5c" path="res://sprites/Explosion:Fire/PNG/Fire/Fire1.png" id="3_ejj5y"]
+[ext_resource type="Texture2D" uid="uid://d30ba7t4jskns" path="res://sprites/Explosion:Fire/fogpng copy.png" id="3_p2jmr"]
 [ext_resource type="Texture2D" uid="uid://c3kasvb355w0x" path="res://sprites/Explosion:Fire/PNG/Fire/Fire2.png" id="4_5226u"]
+[ext_resource type="Texture2D" uid="uid://bk08jvftcnppf" path="res://sprites/Explosion:Fire/PNG/Smoke/Smoke1.png" id="4_cdf0i"]
+[ext_resource type="Texture2D" uid="uid://b41kqgmchhaeb" path="res://sprites/Explosion:Fire/PNG/Smoke/Smoke2.png" id="5_p2jmr"]
 [ext_resource type="Texture2D" uid="uid://dswuac5ikdvoi" path="res://sprites/Explosion:Fire/PNG/Fire/Fire3.png" id="5_y1c0a"]
 [ext_resource type="Texture2D" uid="uid://4xbpus2pfbse" path="res://sprites/Explosion:Fire/PNG/Fire/Fire4.png" id="6_3h0kf"]
+[ext_resource type="Texture2D" uid="uid://pepgdvu3f6qs" path="res://sprites/Explosion:Fire/PNG/Smoke/Smoke3.png" id="6_eustv"]
+[ext_resource type="Texture2D" uid="uid://db3cpyd7h1m7i" path="res://sprites/Explosion:Fire/PNG/Smoke/Smoke4.png" id="7_1louc"]
 [ext_resource type="Texture2D" uid="uid://bthotx7s0xh1h" path="res://sprites/Explosion:Fire/PNG/Fire/Fire5.png" id="7_iew44"]
 [ext_resource type="Texture2D" uid="uid://dv4k4eg1a1brr" path="res://sprites/Explosion:Fire/PNG/Fire/Fire6.png" id="8_a25eg"]
+[ext_resource type="Texture2D" uid="uid://u1w3c53fsc8b" path="res://sprites/Explosion:Fire/PNG/Smoke/Smoke5.png" id="8_kl1wq"]
+[ext_resource type="Texture2D" uid="uid://cflg5c3mh716y" path="res://sprites/Explosion:Fire/PNG/Smoke/Smoke6.png" id="9_aqdvx"]
+[ext_resource type="Texture2D" uid="uid://cip6sellerhn5" path="res://sprites/weather_effects/5 Wind/Wind4.png" id="15_p2jmr"]
+[ext_resource type="Script" uid="uid://qpj817j2una3" path="res://Scripts/enemies.gd" id="18_eustv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cdf0i"]
 animations = [{
@@ -36,14 +45,104 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dagg"]
-size = Vector2(849.75, 28.5)
+[sub_resource type="SpriteFrames" id="SpriteFrames_62ud5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cdf0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p2jmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eustv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1louc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kl1wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aqdvx")
+}],
+"loop": true,
+"name": &"Smoke",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eustv"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1louc"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl1wq"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqdvx"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62ud5"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3vie"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3eta"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(384, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piqhw"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(448, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrgj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eustv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1louc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl1wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqdvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62ud5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3vie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3eta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piqhw")
+}],
+"loop": true,
+"name": &"wind",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2jmr"]
-size = Vector2(1162, 132)
+size = Vector2(6576, 172)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejj5y"]
+size = Vector2(156, 870)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejwn"]
-size = Vector2(121, 95.8447)
+size = Vector2(38.7186, 31.0311)
 
 [node name="WorldFire" type="Node2D"]
 script = ExtResource("1_qejwn")
@@ -51,62 +150,113 @@ script = ExtResource("1_qejwn")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1150, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(574, 465)
+scale = Vector2(0.5625, 0.490723)
+texture = ExtResource("2_qejwn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(575, 428)
+scale = Vector2(0.5625, 0.490723)
+texture = ExtResource("2_qejwn")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(576, 306)
-scale = Vector2(1.12695, 1.04004)
-texture = ExtResource("1_bw4ud")
+position = Vector2(574, 373)
+scale = Vector2(0.5625, 0.505859)
+texture = ExtResource("2_qejwn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(574, 357.5)
+scale = Vector2(0.5625, 0.490723)
+texture = ExtResource("2_qejwn")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(728, 585)
-scale = Vector2(1.8125, 1.85938)
+position = Vector2(439, 730)
+scale = Vector2(0.960935, 0.914062)
 sprite_frames = SubResource("SpriteFrames_cdf0i")
 animation = &"Fire"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(886, 499)
-rotation = 0.637283
-scale = Vector2(1.8125, 1.85938)
+position = Vector2(1293, 731)
+rotation = 0.011094
+scale = Vector2(0.817703, 0.872853)
 sprite_frames = SubResource("SpriteFrames_cdf0i")
 animation = &"Fire"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(984, 464)
-rotation = -1.23008
-scale = Vector2(1.8125, 1.85938)
+position = Vector2(842.19, 730.107)
+rotation = -0.00923097
+scale = Vector2(0.837654, 0.882292)
 sprite_frames = SubResource("SpriteFrames_cdf0i")
 animation = &"Fire"
 frame_progress = 0.363377
 
+[node name="Smoke1" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(974, 575)
+rotation = -0.191858
+scale = Vector2(1.76953, 1.92578)
+sprite_frames = SubResource("SpriteFrames_62ud5")
+animation = &"Smoke"
+frame_progress = 0.640158
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(202, 749)
+scale = Vector2(6.625, 4.375)
+sprite_frames = SubResource("SpriteFrames_xrgj3")
+animation = &"wind"
+frame_progress = 0.531229
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(705, 389)
+scale = Vector2(2.58667, 2.65)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="Fogpng" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(-35.9536, 20.3773)
+scale = Vector2(0.806057, 1)
+texture = ExtResource("3_p2jmr")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(842, 693)
+rotation = -0.716387
+scale = Vector2(0.615532, 0.512089)
+sprite_frames = SubResource("SpriteFrames_cdf0i")
+animation = &"Fire"
+
 [node name="Node2D" parent="." instance=ExtResource("2_ane1y")]
-position = Vector2(-11, 220)
+position = Vector2(3, 306)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(260.125, 273.75)
-shape = SubResource("RectangleShape2D_7dagg")
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(581, 779)
+position = Vector2(3284, 873)
 shape = SubResource("RectangleShape2D_p2jmr")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(68, 425)
+shape = SubResource("RectangleShape2D_ejj5y")
+
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("18_eustv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(730.5, 661.875)
+position = Vector2(441, 772)
 shape = SubResource("RectangleShape2D_qejwn")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(843, 557)
-rotation = 0.658535
+position = Vector2(1291, 769)
+rotation = -1.59869
 shape = SubResource("RectangleShape2D_qejwn")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1050.33, 481.895)
-rotation = -1.21535
+position = Vector2(840.961, 771.018)
+rotation = 1.55133
 shape = SubResource("RectangleShape2D_qejwn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -126,4 +276,5 @@ text = "Volver"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

@@ -29,7 +29,7 @@ position = Vector2(172.5, 358.5)
 shape = SubResource("RectangleShape2D_qhqgy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(573, 314)
+position = Vector2(575, 274)
 
 [connection signal="mouse_entered" from="." to="." method="animations"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
