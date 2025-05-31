@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmhsetshjv1by"]
+[gd_scene load_steps=13 format=3 uid="uid://dmhsetshjv1by"]
 
 [ext_resource type="Script" uid="uid://dkcg4v3aim68m" path="res://Scripts/Selected.gd" id="1_kne1u"]
 [ext_resource type="Script" uid="uid://dx0ox28o217wn" path="res://Scripts/PersonajeLocalWorld1.gd" id="2_e80uo"]
@@ -56,10 +56,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqjt"]
-size = Vector2(87, 174)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ncpa"]
-size = Vector2(87.75, 172)
+size = Vector2(74, 174)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kne1u")
@@ -77,14 +74,8 @@ scale = Vector2(2.19141, 2.30469)
 sprite_frames = SubResource("SpriteFrames_tdg3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(239.5, 395)
+position = Vector2(241, 395)
 shape = SubResource("RectangleShape2D_dtqjt")
-
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(239.125, 396)
-shape = SubResource("RectangleShape2D_5ncpa")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D"]
 

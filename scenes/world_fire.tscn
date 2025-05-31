@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c163jcqhx0lj8"]
+[gd_scene load_steps=42 format=3 uid="uid://c163jcqhx0lj8"]
 
 [ext_resource type="Script" uid="uid://ccqsuojk50i6t" path="res://Scripts/world_fire.gd" id="1_qejwn"]
 [ext_resource type="PackedScene" uid="uid://dmhsetshjv1by" path="res://Player.tscn" id="2_ane1y"]
@@ -17,7 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://u1w3c53fsc8b" path="res://sprites/Explosion:Fire/PNG/Smoke/Smoke5.png" id="8_kl1wq"]
 [ext_resource type="Texture2D" uid="uid://cflg5c3mh716y" path="res://sprites/Explosion:Fire/PNG/Smoke/Smoke6.png" id="9_aqdvx"]
 [ext_resource type="Texture2D" uid="uid://cip6sellerhn5" path="res://sprites/weather_effects/5 Wind/Wind4.png" id="15_p2jmr"]
+[ext_resource type="Texture2D" uid="uid://c0yjryraaa2ai" path="res://sprites/ChatGPT Image May 31, 2025, 12_16_22 PM.png" id="16_62ud5"]
 [ext_resource type="Script" uid="uid://qpj817j2una3" path="res://Scripts/enemies.gd" id="18_eustv"]
+[ext_resource type="Texture2D" uid="uid://bld4tolb7w5e0" path="res://sprites/platforms.png" id="18_kl1wq"]
+[ext_resource type="Texture2D" uid="uid://bhvjqtk716jht" path="res://sprites/Shortplatforms.png" id="19_aqdvx"]
+[ext_resource type="PackedScene" uid="uid://bnc6m3ucq817b" path="res://scenes/FireTree.tscn" id="21_aqdvx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cdf0i"]
 animations = [{
@@ -136,58 +140,73 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2jmr"]
-size = Vector2(6576, 172)
+size = Vector2(8149, 172)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejj5y"]
 size = Vector2(156, 870)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqdvx"]
+size = Vector2(258, 106.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62ud5"]
+size = Vector2(141, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3vie"]
+size = Vector2(527, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3eta"]
+size = Vector2(513, 134)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejwn"]
-size = Vector2(38.7186, 31.0311)
+size = Vector2(50, 31.0311)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_piqhw"]
+size = Vector2(27, 195)
 
 [node name="WorldFire" type="Node2D"]
 script = ExtResource("1_qejwn")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1150, 0)
 
-[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/Background"]
 position = Vector2(574, 465)
 scale = Vector2(0.5625, 0.490723)
 texture = ExtResource("2_qejwn")
 
-[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Background"]
 position = Vector2(575, 428)
 scale = Vector2(0.5625, 0.490723)
 texture = ExtResource("2_qejwn")
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background"]
 position = Vector2(574, 373)
 scale = Vector2(0.5625, 0.505859)
 texture = ExtResource("2_qejwn")
 
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Background"]
 position = Vector2(574, 357.5)
 scale = Vector2(0.5625, 0.490723)
 texture = ExtResource("2_qejwn")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="EnemyAnimations" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
 position = Vector2(439, 730)
 scale = Vector2(0.960935, 0.914062)
 sprite_frames = SubResource("SpriteFrames_cdf0i")
 animation = &"Fire"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
 position = Vector2(1293, 731)
 rotation = 0.011094
 scale = Vector2(0.817703, 0.872853)
 sprite_frames = SubResource("SpriteFrames_cdf0i")
 animation = &"Fire"
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
 position = Vector2(842.19, 730.107)
 rotation = -0.00923097
 scale = Vector2(0.837654, 0.882292)
@@ -195,7 +214,7 @@ sprite_frames = SubResource("SpriteFrames_cdf0i")
 animation = &"Fire"
 frame_progress = 0.363377
 
-[node name="Smoke1" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Smoke1" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
 position = Vector2(974, 575)
 rotation = -0.191858
 scale = Vector2(1.76953, 1.92578)
@@ -203,31 +222,51 @@ sprite_frames = SubResource("SpriteFrames_62ud5")
 animation = &"Smoke"
 frame_progress = 0.640158
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="wind" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
 position = Vector2(202, 749)
 scale = Vector2(6.625, 4.375)
 sprite_frames = SubResource("SpriteFrames_xrgj3")
 animation = &"wind"
 frame_progress = 0.531229
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(705, 389)
-scale = Vector2(2.58667, 2.65)
-motion_mirroring = Vector2(1150, 0)
-
-[node name="Fogpng" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(-35.9536, 20.3773)
-scale = Vector2(0.806057, 1)
-texture = ExtResource("3_p2jmr")
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
 position = Vector2(842, 693)
 rotation = -0.716387
 scale = Vector2(0.615532, 0.512089)
 sprite_frames = SubResource("SpriteFrames_cdf0i")
 animation = &"Fire"
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/EnemyAnimations"]
+position = Vector2(2149, 772)
+scale = Vector2(0.452637, 0.400879)
+texture = ExtResource("16_62ud5")
+
+[node name="Fog" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(705, 389)
+scale = Vector2(2.58667, 2.65)
+motion_mirroring = Vector2(150, 0)
+
+[node name="Fogpng" type="Sprite2D" parent="ParallaxBackground/Fog"]
+position = Vector2(-35.9536, 20.3773)
+scale = Vector2(0.806057, 1)
+texture = ExtResource("3_p2jmr")
+
+[node name="Platforms" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(1997, 698)
+scale = Vector2(0.384115, 0.411621)
+texture = ExtResource("18_kl1wq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(2060, 631)
+scale = Vector2(0.735677, 0.704102)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(2905, 626.5)
+scale = Vector2(0.783203, 0.750977)
+texture = ExtResource("18_kl1wq")
 
 [node name="Node2D" parent="." instance=ExtResource("2_ane1y")]
 position = Vector2(3, 306)
@@ -235,18 +274,36 @@ position = Vector2(3, 306)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3284, 873)
+position = Vector2(4070.5, 873)
 shape = SubResource("RectangleShape2D_p2jmr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(68, 425)
 shape = SubResource("RectangleShape2D_ejj5y")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1831, 733.25)
+shape = SubResource("RectangleShape2D_aqdvx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2153.5, 691)
+shape = SubResource("RectangleShape2D_62ud5")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2565.5, 690)
+shape = SubResource("RectangleShape2D_d3vie")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(2565.5, 665)
+shape = SubResource("RectangleShape2D_l3eta")
+
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("18_eustv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(441, 772)
+position = Vector2(442, 772)
 shape = SubResource("RectangleShape2D_qejwn")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
@@ -258,6 +315,10 @@ shape = SubResource("RectangleShape2D_qejwn")
 position = Vector2(840.961, 771.018)
 rotation = 1.55133
 shape = SubResource("RectangleShape2D_qejwn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2263.5, 689.5)
+shape = SubResource("RectangleShape2D_piqhw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -273,6 +334,9 @@ offset_top = 6.0
 offset_right = 141.0
 offset_bottom = 42.0
 text = "Volver"
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("21_aqdvx")]
+position = Vector2(1736, -48)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

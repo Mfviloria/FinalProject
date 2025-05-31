@@ -25,9 +25,10 @@ func _ready() -> void:
 	
 func take_damage(enemyposx):
 	if position.x < enemyposx:
-		knockback_force = Vector2(300, -100)
+		knockback_force = Vector2(300, -130)
 	else:
 		knockback_force = Vector2(-300, -130)
+		
 	knockback_timer = 0.2  # duración en segundos del retroceso
 
 		
