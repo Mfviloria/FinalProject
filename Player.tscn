@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://dmhsetshjv1by"]
 
-[ext_resource type="Script" uid="uid://dkcg4v3aim68m" path="res://Scripts/Selected.gd" id="1_kne1u"]
-[ext_resource type="Script" uid="uid://dx0ox28o217wn" path="res://Scripts/PersonajeLocalWorld1.gd" id="2_e80uo"]
-[ext_resource type="Texture2D" uid="uid://wstt32ef83yi" path="res://sprites/player/Infantryman/Idle.png" id="3_cxr5p"]
-[ext_resource type="Texture2D" uid="uid://bghpofiiuorjl" path="res://sprites/Images/lifes.png" id="4_e80uo"]
+[ext_resource type="Script" uid="uid://dkcg4v3aim68m" path="res://FireWorld/Scripts/Selected.gd" id="1_kne1u"]
+[ext_resource type="Script" uid="uid://dx0ox28o217wn" path="res://FireWorld/Scripts/PersonajeLocalWorld1.gd" id="2_e80uo"]
+[ext_resource type="Texture2D" uid="uid://wstt32ef83yi" path="res://FireWorld/sprites/player/Infantryman/Idle.png" id="3_cxr5p"]
+[ext_resource type="Texture2D" uid="uid://bghpofiiuorjl" path="res://FireWorld/sprites/Images/lifes.png" id="4_e80uo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77kw0"]
 atlas = ExtResource("3_cxr5p")

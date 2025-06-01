@@ -1,10 +1,10 @@
 [gd_resource type="SpriteFrames" load_steps=39 format=3 uid="uid://dnt7nypfkegoh"]
 
-[ext_resource type="Texture2D" uid="uid://q122s1on2ffk" path="res://sprites/player/Destroyer/Attack_2.png" id="1_grwyr"]
-[ext_resource type="Texture2D" uid="uid://bnxxohgps5fd" path="res://sprites/player/Destroyer/Dead.png" id="2_s0qm0"]
-[ext_resource type="Texture2D" uid="uid://c5mpjb2n1sjt7" path="res://sprites/player/Destroyer/Idle.png" id="3_qkekc"]
-[ext_resource type="Texture2D" uid="uid://c2vs1yrs0v0qc" path="res://sprites/player/Destroyer/Shutdown.png" id="4_6enot"]
-[ext_resource type="Texture2D" uid="uid://2sqclqm04qux" path="res://sprites/player/Destroyer/Walk.png" id="5_82gko"]
+[ext_resource type="Texture2D" uid="uid://q122s1on2ffk" path="res://FireWorld/sprites/player/Destroyer/Attack_2.png" id="1_grwyr"]
+[ext_resource type="Texture2D" uid="uid://bnxxohgps5fd" path="res://FireWorld/sprites/player/Destroyer/Dead.png" id="2_s0qm0"]
+[ext_resource type="Texture2D" uid="uid://c5mpjb2n1sjt7" path="res://FireWorld/sprites/player/Destroyer/Idle.png" id="3_qkekc"]
+[ext_resource type="Texture2D" uid="uid://c2vs1yrs0v0qc" path="res://FireWorld/sprites/player/Destroyer/Shutdown.png" id="4_6enot"]
+[ext_resource type="Texture2D" uid="uid://2sqclqm04qux" path="res://FireWorld/sprites/player/Destroyer/Walk.png" id="5_82gko"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dfjme"]
 atlas = ExtResource("1_grwyr")

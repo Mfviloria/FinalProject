@@ -1,10 +1,10 @@
 [gd_resource type="SpriteFrames" load_steps=37 format=3 uid="uid://d25sccbp871x6"]
 
-[ext_resource type="Texture2D" uid="uid://db7s8kt0fdyq6" path="res://sprites/player/Swordsman/Attack_1.png" id="1_imlfi"]
-[ext_resource type="Texture2D" uid="uid://dh4j1ssnhjxaw" path="res://sprites/player/Swordsman/Dead.png" id="2_88mv6"]
-[ext_resource type="Texture2D" uid="uid://d4hip4rvs5nkv" path="res://sprites/player/Swordsman/Idle.png" id="3_volbr"]
-[ext_resource type="Texture2D" uid="uid://byar3l03356wl" path="res://sprites/player/Swordsman/Shutdown.png" id="4_dddlp"]
-[ext_resource type="Texture2D" uid="uid://h6q0s1r0fbkg" path="res://sprites/player/Swordsman/Pick_Up.png" id="5_075tx"]
+[ext_resource type="Texture2D" uid="uid://db7s8kt0fdyq6" path="res://FireWorld/sprites/player/Swordsman/Attack_1.png" id="1_imlfi"]
+[ext_resource type="Texture2D" uid="uid://dh4j1ssnhjxaw" path="res://FireWorld/sprites/player/Swordsman/Dead.png" id="2_88mv6"]
+[ext_resource type="Texture2D" uid="uid://d4hip4rvs5nkv" path="res://FireWorld/sprites/player/Swordsman/Idle.png" id="3_volbr"]
+[ext_resource type="Texture2D" uid="uid://byar3l03356wl" path="res://FireWorld/sprites/player/Swordsman/Shutdown.png" id="4_dddlp"]
+[ext_resource type="Texture2D" uid="uid://h6q0s1r0fbkg" path="res://FireWorld/sprites/player/Swordsman/Pick_Up.png" id="5_075tx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6vopk"]
 atlas = ExtResource("1_imlfi")

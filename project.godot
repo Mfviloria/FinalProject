@@ -13,11 +13,11 @@ config_version=5
 config/name="ProjectTry1"
 run/main_scene="uid://bx07hvmw26mm"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://FireWorld/icon.svg"
 
 [autoload]
 
-Global="*res://Scripts/Global.gd"
+Global="*res://FireWorld/Scripts/Global.gd"
 
 [display]
 

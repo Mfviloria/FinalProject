@@ -1,0 +1,751 @@
+[gd_scene load_steps=64 format=3 uid="uid://c163jcqhx0lj8"]
+
+[ext_resource type="Script" uid="uid://ccqsuojk50i6t" path="res://FireWorld/Scripts/world_fire.gd" id="1_qejwn"]
+[ext_resource type="PackedScene" uid="uid://dmhsetshjv1by" path="res://Player.tscn" id="2_ane1y"]
+[ext_resource type="Texture2D" uid="uid://b7ichd21cv8yd" path="res://FireWorld/sprites/Mundos (2)/mundo_deforest.png" id="2_qejwn"]
+[ext_resource type="Texture2D" uid="uid://d3qemd3wnvi5c" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire1.png" id="3_ejj5y"]
+[ext_resource type="Texture2D" uid="uid://d30ba7t4jskns" path="res://FireWorld/sprites/Explosion:Fire/fogpng copy.png" id="3_p2jmr"]
+[ext_resource type="Texture2D" uid="uid://c3kasvb355w0x" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire2.png" id="4_5226u"]
+[ext_resource type="Texture2D" uid="uid://bk08jvftcnppf" path="res://FireWorld/sprites/Explosion:Fire/PNG/Smoke/Smoke1.png" id="4_cdf0i"]
+[ext_resource type="Texture2D" uid="uid://b41kqgmchhaeb" path="res://FireWorld/sprites/Explosion:Fire/PNG/Smoke/Smoke2.png" id="5_p2jmr"]
+[ext_resource type="Texture2D" uid="uid://dswuac5ikdvoi" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire3.png" id="5_y1c0a"]
+[ext_resource type="Texture2D" uid="uid://4xbpus2pfbse" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire4.png" id="6_3h0kf"]
+[ext_resource type="Texture2D" uid="uid://pepgdvu3f6qs" path="res://FireWorld/sprites/Explosion:Fire/PNG/Smoke/Smoke3.png" id="6_eustv"]
+[ext_resource type="Texture2D" uid="uid://db3cpyd7h1m7i" path="res://FireWorld/sprites/Explosion:Fire/PNG/Smoke/Smoke4.png" id="7_1louc"]
+[ext_resource type="Texture2D" uid="uid://bthotx7s0xh1h" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire5.png" id="7_iew44"]
+[ext_resource type="Texture2D" uid="uid://dv4k4eg1a1brr" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire6.png" id="8_a25eg"]
+[ext_resource type="Texture2D" uid="uid://u1w3c53fsc8b" path="res://FireWorld/sprites/Explosion:Fire/PNG/Smoke/Smoke5.png" id="8_kl1wq"]
+[ext_resource type="Texture2D" uid="uid://cflg5c3mh716y" path="res://FireWorld/sprites/Explosion:Fire/PNG/Smoke/Smoke6.png" id="9_aqdvx"]
+[ext_resource type="Texture2D" uid="uid://cip6sellerhn5" path="res://FireWorld/sprites/weather_effects/5 Wind/Wind4.png" id="15_p2jmr"]
+[ext_resource type="Texture2D" uid="uid://c0yjryraaa2ai" path="res://FireWorld/sprites/ChatGPT Image May 31, 2025, 12_16_22 PM.png" id="16_62ud5"]
+[ext_resource type="Script" uid="uid://qpj817j2una3" path="res://FireWorld/Scripts/enemies.gd" id="18_eustv"]
+[ext_resource type="Texture2D" uid="uid://bld4tolb7w5e0" path="res://FireWorld/sprites/platforms.png" id="18_kl1wq"]
+[ext_resource type="Texture2D" uid="uid://bhvjqtk716jht" path="res://FireWorld/sprites/Shortplatforms.png" id="19_aqdvx"]
+[ext_resource type="PackedScene" uid="uid://bnc6m3ucq817b" path="res://FireWorld/scenes/FireTree.tscn" id="21_aqdvx"]
+[ext_resource type="PackedScene" uid="uid://dunq2t1ksi41c" path="res://FireWorld/scenes/fire.tscn" id="22_d3vie"]
+[ext_resource type="PackedScene" uid="uid://bu8sn6fg6575q" path="res://FireWorld/Firegrwon.tscn" id="24_l3eta"]
+[ext_resource type="PackedScene" uid="uid://h1tnnfjb8q3c" path="res://FireWorld/scenes/firebodyfaster.tscn" id="25_piqhw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_62ud5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cdf0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p2jmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eustv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1louc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kl1wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aqdvx")
+}],
+"loop": true,
+"name": &"Smoke",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdf0i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ejj5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5226u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y1c0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3h0kf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_iew44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a25eg")
+}],
+"loop": true,
+"name": &"Fire",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eustv"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1louc"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl1wq"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqdvx"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62ud5"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3vie"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3eta"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(384, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piqhw"]
+atlas = ExtResource("15_p2jmr")
+region = Rect2(448, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrgj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eustv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1louc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl1wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqdvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62ud5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3vie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3eta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piqhw")
+}],
+"loop": true,
+"name": &"wind",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2jmr"]
+size = Vector2(25779.9, 172)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejj5y"]
+size = Vector2(156, 870)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqdvx"]
+size = Vector2(258, 106.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62ud5"]
+size = Vector2(141, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3vie"]
+size = Vector2(527, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tiwk6"]
+size = Vector2(147, 169)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrgj3"]
+size = Vector2(119, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3eta"]
+size = Vector2(513, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_031ew"]
+size = Vector2(156, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkw4p"]
+size = Vector2(989.5, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lorts"]
+size = Vector2(7442.5, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxw2b"]
+size = Vector2(107.5, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivua1"]
+size = Vector2(161, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_didsw"]
+size = Vector2(671, 265)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2o4m"]
+size = Vector2(160, 181)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3q2bo"]
+size = Vector2(462.75, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8c52"]
+size = Vector2(142, 196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3oja"]
+size = Vector2(999, 197)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oieo"]
+size = Vector2(998, 286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20bl7"]
+size = Vector2(267, 354.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msi6r"]
+size = Vector2(349, 451.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d5jn"]
+size = Vector2(1953, 592)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbi0v"]
+size = Vector2(394.25, 504.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qejwn"]
+size = Vector2(50, 31.0311)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_piqhw"]
+size = Vector2(27, 195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5pqb"]
+size = Vector2(60, 820.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbbp6"]
+size = Vector2(5182.5, 118)
+
+[node name="WorldFire" type="Node2D"]
+script = ExtResource("1_qejwn")
+
+[node name="Fire" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(2934, 222)
+
+[node name="Fire2" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(2984, 224)
+
+[node name="Fire3" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(5375, 223)
+
+[node name="Fire4" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(5086, 224)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1150, 0)
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(583, 219)
+scale = Vector2(0.5625, 0.490723)
+texture = ExtResource("2_qejwn")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(576, 275)
+scale = Vector2(0.5625, 0.490723)
+texture = ExtResource("2_qejwn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(574, 315)
+scale = Vector2(0.5625, 0.490723)
+texture = ExtResource("2_qejwn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(574, 465)
+scale = Vector2(0.5625, 0.490723)
+texture = ExtResource("2_qejwn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(575, 428)
+scale = Vector2(0.5625, 0.490723)
+texture = ExtResource("2_qejwn")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(574, 373)
+scale = Vector2(0.5625, 0.505859)
+texture = ExtResource("2_qejwn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(574, 357.5)
+scale = Vector2(0.5625, 0.490723)
+texture = ExtResource("2_qejwn")
+
+[node name="Smoke1" type="AnimatedSprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(974, 575)
+rotation = -0.191858
+scale = Vector2(1.76953, 1.92578)
+sprite_frames = SubResource("SpriteFrames_62ud5")
+animation = &"Smoke"
+frame_progress = 0.640158
+
+[node name="EnemyAnimations" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
+position = Vector2(439, 730)
+scale = Vector2(0.960935, 0.914062)
+sprite_frames = SubResource("SpriteFrames_cdf0i")
+animation = &"Fire"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
+position = Vector2(1293, 731)
+rotation = 0.011094
+scale = Vector2(0.817703, 0.872853)
+sprite_frames = SubResource("SpriteFrames_cdf0i")
+animation = &"Fire"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
+position = Vector2(842.19, 730.107)
+rotation = -0.00923097
+scale = Vector2(0.837654, 0.882292)
+sprite_frames = SubResource("SpriteFrames_cdf0i")
+animation = &"Fire"
+frame_progress = 0.363377
+
+[node name="wind" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
+position = Vector2(202, 749)
+scale = Vector2(6.625, 4.375)
+sprite_frames = SubResource("SpriteFrames_xrgj3")
+animation = &"wind"
+frame_progress = 0.531229
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
+position = Vector2(842, 693)
+rotation = -0.716387
+scale = Vector2(0.615532, 0.512089)
+sprite_frames = SubResource("SpriteFrames_cdf0i")
+animation = &"Fire"
+
+[node name="Smoke2" type="AnimatedSprite2D" parent="ParallaxBackground/EnemyAnimations"]
+position = Vector2(2250.04, 553.17)
+rotation = -0.00867144
+scale = Vector2(2.05095, 3.64438)
+sprite_frames = SubResource("SpriteFrames_62ud5")
+animation = &"Smoke"
+frame_progress = 0.640158
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/EnemyAnimations"]
+position = Vector2(2149, 772)
+scale = Vector2(0.452637, 0.400879)
+texture = ExtResource("16_62ud5")
+
+[node name="Fog" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(705, 389)
+scale = Vector2(2.58667, 2.65)
+motion_mirroring = Vector2(150, 0)
+
+[node name="Fogpng" type="Sprite2D" parent="ParallaxBackground/Fog"]
+position = Vector2(-35.9536, 20.3773)
+scale = Vector2(0.806057, 1)
+texture = ExtResource("3_p2jmr")
+
+[node name="Platforms" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(1997, 698)
+scale = Vector2(0.384115, 0.411621)
+texture = ExtResource("18_kl1wq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(2060, 631)
+scale = Vector2(0.735677, 0.704102)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(2905, 626.5)
+scale = Vector2(0.783203, 0.750977)
+texture = ExtResource("18_kl1wq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(2994, 649)
+scale = Vector2(0.74349, 0.634399)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(3307, 674)
+scale = Vector2(0.617838, 0.507721)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(6490, 567)
+texture = ExtResource("18_kl1wq")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(5176, 691)
+scale = Vector2(0.551758, 0.429176)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(5392, 644)
+scale = Vector2(0.823812, 0.653193)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(6542, 448)
+scale = Vector2(0.823812, 0.653193)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(6839, 353)
+scale = Vector2(0.823812, 0.653193)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(7425, 690)
+scale = Vector2(0.823812, 0.449219)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(7788, 640)
+scale = Vector2(0.823812, 0.653193)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(18722.5, 695)
+scale = Vector2(0.692058, 0.436523)
+texture = ExtResource("18_kl1wq")
+
+[node name="Sprite2D14" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(18838, 624)
+scale = Vector2(0.729167, 0.739258)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D15" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(20348.9, 624)
+scale = Vector2(1.48844, 0.737793)
+texture = ExtResource("18_kl1wq")
+
+[node name="Sprite2D16" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(20422, 630)
+scale = Vector2(0.729167, 0.739258)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D17" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(21940, 549)
+scale = Vector2(1.48844, 1.06128)
+texture = ExtResource("18_kl1wq")
+
+[node name="Sprite2D18" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(22016, 491)
+scale = Vector2(1.35579, 1.38086)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D19" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(22477, 418)
+scale = Vector2(1.76082, 1.67952)
+texture = ExtResource("19_aqdvx")
+
+[node name="Sprite2D20" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(25344, 386)
+scale = Vector2(2.8843, 1.97059)
+texture = ExtResource("18_kl1wq")
+
+[node name="Sprite2D21" type="Sprite2D" parent="ParallaxBackground/Platforms"]
+position = Vector2(25310, 381)
+scale = Vector2(2.04628, 2.03556)
+texture = ExtResource("19_aqdvx")
+
+[node name="Node2D" parent="." instance=ExtResource("2_ane1y")]
+position = Vector2(6, -225)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(12872, 873)
+shape = SubResource("RectangleShape2D_p2jmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(68, 425)
+shape = SubResource("RectangleShape2D_ejj5y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1831, 733.25)
+shape = SubResource("RectangleShape2D_aqdvx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2153.5, 691)
+shape = SubResource("RectangleShape2D_62ud5")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2565.5, 690)
+shape = SubResource("RectangleShape2D_d3vie")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3087.5, 701.5)
+shape = SubResource("RectangleShape2D_tiwk6")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3384.5, 715.5)
+shape = SubResource("RectangleShape2D_xrgj3")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(2565.5, 665)
+shape = SubResource("RectangleShape2D_l3eta")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(6942, 387)
+shape = SubResource("RectangleShape2D_031ew")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(4396, 834)
+shape = SubResource("RectangleShape2D_wkw4p")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(12362.8, 821)
+shape = SubResource("RectangleShape2D_lorts")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5245.25, 726.5)
+shape = SubResource("RectangleShape2D_fxw2b")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5495, 699.25)
+shape = SubResource("RectangleShape2D_ivua1")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(6058.5, 651.5)
+shape = SubResource("RectangleShape2D_didsw")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(6647, 474)
+shape = SubResource("RectangleShape2D_ivua1")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7529, 727.5)
+shape = SubResource("RectangleShape2D_ivua1")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(6942, 392)
+shape = SubResource("RectangleShape2D_ivua1")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7890, 701)
+shape = SubResource("RectangleShape2D_f2o4m")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(18423.6, 730)
+shape = SubResource("RectangleShape2D_3q2bo")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(18930, 688)
+shape = SubResource("RectangleShape2D_x8c52")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(19705.5, 690)
+shape = SubResource("RectangleShape2D_n3oja")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(20512, 689)
+shape = SubResource("RectangleShape2D_x8c52")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(21297, 642)
+shape = SubResource("RectangleShape2D_4oieo")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(22186, 610.375)
+shape = SubResource("RectangleShape2D_20bl7")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(22703, 558.75)
+shape = SubResource("RectangleShape2D_msi6r")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(24098.5, 585)
+shape = SubResource("RectangleShape2D_5d5jn")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(25566.9, 551.625)
+shape = SubResource("RectangleShape2D_pbi0v")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("18_eustv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(442, 772)
+shape = SubResource("RectangleShape2D_qejwn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1291, 769)
+rotation = -1.59869
+shape = SubResource("RectangleShape2D_qejwn")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(840.961, 771.018)
+rotation = 1.55133
+shape = SubResource("RectangleShape2D_qejwn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2263.5, 689.5)
+shape = SubResource("RectangleShape2D_piqhw")
+
+[node name="Fire" parent="Area2D" instance=ExtResource("22_d3vie")]
+position = Vector2(2612, 222)
+
+[node name="Fire2" parent="Area2D" instance=ExtResource("22_d3vie")]
+position = Vector2(2677, 224)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 6.0
+offset_right = 141.0
+offset_bottom = 42.0
+text = "Volver"
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("21_aqdvx")]
+position = Vector2(1736, -48)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("21_aqdvx")]
+position = Vector2(6041, -338)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("21_aqdvx")]
+position = Vector2(3266, -113)
+
+[node name="Fire5" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(7419, 268)
+
+[node name="Velocity" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Velocity"]
+position = Vector2(8630, 397)
+shape = SubResource("RectangleShape2D_y5pqb")
+
+[node name="NormalV" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NormalV"]
+position = Vector2(16114, 408)
+shape = SubResource("RectangleShape2D_y5pqb")
+
+[node name="Firebody" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(8589, 118)
+
+[node name="Firebody2" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(9002, 113)
+
+[node name="Firebody3" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(9379, 96)
+
+[node name="Firebody4" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(9792, 91)
+
+[node name="Firebody5" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(10155, 86)
+
+[node name="Firebody6" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(10568, 81)
+
+[node name="Firebody7" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(10945, 64)
+
+[node name="Firebody8" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(11358, 59)
+
+[node name="Firebody9" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(11735, 75)
+
+[node name="Firebody10" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(12148, 70)
+
+[node name="Firebody11" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(12525, 53)
+
+[node name="Firebody12" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(12938, 48)
+
+[node name="Firebody13" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(13301, 43)
+
+[node name="Firebody14" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(13714, 38)
+
+[node name="Firebody15" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(14091, 21)
+
+[node name="Firebody16" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(14504, 16)
+
+[node name="Firebody17" parent="." instance=ExtResource("25_piqhw")]
+position = Vector2(14848, 34)
+
+[node name="Fire6" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(16316, 224)
+
+[node name="Fire7" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(16749, 224)
+
+[node name="Fire8" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(17188, 224)
+
+[node name="Fire9" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(18154, 111)
+
+[node name="Fire10" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(18478, 268)
+
+[node name="Fire11" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(18826, 268)
+
+[node name="Caída" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caída"]
+position = Vector2(22796.8, 728)
+shape = SubResource("RectangleShape2D_hbbp6")
+
+[node name="Fire12" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(19243, 27)
+
+[node name="Fire13" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(19619, 26)
+
+[node name="Fire14" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(20827, -64)
+
+[node name="Fire15" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(21211, -65)
+
+[node name="Fire16" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(21619, 152)
+
+[node name="Fire17" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(22146, 131)
+
+[node name="Fire18" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(22694, 92)
+
+[node name="Fire19" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(24909, 50)
+
+[node name="Fire20" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(24903, 148)
+
+[node name="Fire21" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(22695, 266)
+
+[node name="Fire22" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(22144, 271)
+
+[node name="Fire23" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(21614, 269)
+
+[node name="Fire24" parent="." instance=ExtResource("24_l3eta")]
+position = Vector2(24905, 268)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="Velocity" to="." method="_on_velocity_body_entered"]
+[connection signal="body_entered" from="NormalV" to="." method="_on_normal_v_body_entered"]
+[connection signal="body_entered" from="NormalV" to="." method="_on_velocity_body_entered"]
+[connection signal="body_entered" from="Caída" to="." method="_on_caída_body_entered"]

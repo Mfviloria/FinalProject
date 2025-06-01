@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://dunq2t1ksi41c"]
+
+[ext_resource type="Texture2D" uid="uid://d3qemd3wnvi5c" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire1.png" id="1_10wrr"]
+[ext_resource type="Script" uid="uid://dyl41aqd8g7fs" path="res://FireWorld/Scripts/fire.gd" id="1_theev"]
+[ext_resource type="Texture2D" uid="uid://c3kasvb355w0x" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire2.png" id="2_theev"]
+[ext_resource type="Texture2D" uid="uid://dswuac5ikdvoi" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire3.png" id="3_3l77w"]
+[ext_resource type="Texture2D" uid="uid://4xbpus2pfbse" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire4.png" id="4_ajlmw"]
+[ext_resource type="Texture2D" uid="uid://bthotx7s0xh1h" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire5.png" id="5_ia3m4"]
+[ext_resource type="Texture2D" uid="uid://dv4k4eg1a1brr" path="res://FireWorld/sprites/Explosion:Fire/PNG/Fire/Fire6.png" id="6_tuqhi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3l77w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_10wrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_theev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3l77w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ajlmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ia3m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tuqhi")
+}],
+"loop": true,
+"name": &"Fire",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajlmw"]
+size = Vector2(50, 34.5339)
+
+[node name="Fire" type="Node2D"]
+script = ExtResource("1_theev")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(265.75, 444.875)
+scale = Vector2(1.78515, 1.8418)
+sprite_frames = SubResource("SpriteFrames_3l77w")
+animation = &"Fire"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(275.75, 434.875)
+scale = Vector2(1.9414, 1.99805)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.47687, 47.3588)
+shape = SubResource("RectangleShape2D_ajlmw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
