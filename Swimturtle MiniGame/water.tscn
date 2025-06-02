@@ -10,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://b6xfikit2aqfm" path="res://Swimturtle MiniGame/trashShorter.tscn" id="4_x4ob8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcmoc"]
-size = Vector2(2712, 211.5)
+size = Vector2(2712, 392.75)
 
 [node name="Water" type="Node2D"]
+position = Vector2(0, 3)
 script = ExtResource("1_dcmoc")
 Trashscene = ExtResource("4_x4ob8")
 TrashsceneLonger = ExtResource("3_746c1")
@@ -47,15 +48,16 @@ position = Vector2(687, 429)
 scale = Vector2(1.32715, 1.25684)
 texture = ExtResource("3_dcmoc")
 
-[node name="Area2D" type="StaticBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-5, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1363, 960)
+position = Vector2(1363, 869.375)
 shape = SubResource("RectangleShape2D_dcmoc")
 
 [node name="Trashtimer" type="Timer" parent="."]
 wait_time = 1.5
 
 [connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Trashtimer" to="." method="_on_trashtimer_timeout"]

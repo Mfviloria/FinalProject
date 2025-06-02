@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d35wlteqxg8td"]
+
+[ext_resource type="Script" uid="uid://xsnkj6d4adst" path="res://Flood world/botella_2.gd" id="1_11vq4"]
+[ext_resource type="Texture2D" uid="uid://sea5ux34fkm6" path="res://Flood world/obstaculos_ocean/8.png" id="2_o4vat"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2a7md"]
+size = Vector2(37, 71)
+
+[node name="botella2" type="Area2D" groups=["Plastic"]]
+script = ExtResource("1_11vq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(39.5, 42.5)
+shape = SubResource("RectangleShape2D_2a7md")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" groups=["Plastic"]]
+position = Vector2(0.500004, 1.5)
+scale = Vector2(0.327637, 0.323242)
+texture = ExtResource("2_o4vat")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

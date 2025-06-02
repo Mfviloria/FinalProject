@@ -30,10 +30,10 @@ func _on_swordsman_pressed() -> void:
 	
 func _on_select_pressed() -> void:
 	Global.selected = num
-	get_tree().change_scene_to_file("res://scenes/world_1.tscn")
+	get_tree().change_scene_to_file("res://FireWorld/scenes/world_1.tscn")
 	
 	
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/control.tscn")
+	get_tree().change_scene_to_file("res://FireWorld/scenes/control.tscn")

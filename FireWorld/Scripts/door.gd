@@ -9,7 +9,7 @@ func _ready():
 
 func _process(delta):
 	if pasar and Input.is_action_just_pressed("Interact"):
-		get_tree().change_scene_to_file("res://scenes/world_fire.tscn")
+		get_tree().change_scene_to_file("res://FireWorld/scenes/world_fire.tscn")
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	indicator.visible = true

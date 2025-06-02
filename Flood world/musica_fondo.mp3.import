@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjbguucryynhp"
+path="res://.godot/imported/musica_fondo.mp3-a2de413a7ea41380ac149bf8fdc16d0b.mp3str"
+
+[deps]
+
+source_file="res://Flood world/musica_fondo.mp3"
+dest_files=["res://.godot/imported/musica_fondo.mp3-a2de413a7ea41380ac149bf8fdc16d0b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvw0kl3q2no0g"]
+
+[ext_resource type="Script" uid="uid://dronm2vgl7vdp" path="res://Flood world/plastic.gd" id="1_2a7md"]
+[ext_resource type="Texture2D" uid="uid://dhtgftkymsli8" path="res://Flood world/obstaculos_ocean/7.png" id="1_xmibw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2a7md"]
+size = Vector2(37, 71)
+
+[node name="Plastic" type="Area2D" groups=["Plastic"]]
+script = ExtResource("1_2a7md")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(39.5, 42.5)
+shape = SubResource("RectangleShape2D_2a7md")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" groups=["Plastic"]]
+position = Vector2(0.500004, 1.5)
+scale = Vector2(0.327637, 0.323242)
+texture = ExtResource("1_xmibw")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -64,8 +64,9 @@ func _process(delta):
 		
 func win():
 	$Trashtimer.stop()
-	$CharacterBody2D.flying = false
 	game_running = false
+	get_tree().change_scene_to_file("res://Swimturtle MiniGame/WIN.tscn")
+	
 	
 
 
@@ -116,8 +117,7 @@ func stop_game():
 	$CharacterBody2D.flying = false
 	game_running = false
 	game_over = true
-	await get_tree().create_timer(2.0).timeout
-	get_tree().change_scene_to_file("res://Swimturtle MiniGame/LOse.tscn")
+	
 
 
 func trash_hit():
@@ -126,6 +126,5 @@ func trash_hit():
 
 
 
-func _on_ground_hit() -> void:
-	$CharacterBody2D.falling = false
-	stop_game()
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Swimturtle MiniGame/LOse.tscn")

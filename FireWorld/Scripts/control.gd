@@ -10,7 +10,7 @@ func _process(delta):
 
 
 func StartGame() -> void:
-	get_tree().change_scene_to_file("res://scenes/selectCharacter.tscn")
+	get_tree().change_scene_to_file("res://FireWorld/scenes/selectCharacter.tscn")
 
 
 func Settings() -> void:

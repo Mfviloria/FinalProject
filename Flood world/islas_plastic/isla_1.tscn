@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ei5f7olkfjef"]
+
+[ext_resource type="Texture2D" uid="uid://cuhdcow5hkqyd" path="res://1.png" id="1_mnyjo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l412x"]
+size = Vector2(188, 88.25)
+
+[node name="Isla1" type="Node2D"]
+
+[node name="isla1" type="Sprite2D" parent="."]
+position = Vector2(99.5, 311)
+scale = Vector2(0.378, 0.348)
+texture = ExtResource("1_mnyjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(100, 328.875)
+shape = SubResource("RectangleShape2D_l412x")

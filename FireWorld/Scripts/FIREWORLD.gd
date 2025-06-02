@@ -1,22 +1,13 @@
 extends Node2D
 
-var fire
-var fire2
-var fire3
-var sm
 var count = 0
 var firegrown
 
 func _ready():
-	fire = $ParallaxBackground/EnemyAnimations/AnimatedSprite2D
-	fire2 = $ParallaxBackground/EnemyAnimations/AnimatedSprite2D2
-	fire3 = $ParallaxBackground/EnemyAnimations/AnimatedSprite2D3
-	sm = $ParallaxBackground/Background/Smoke1
-	
-	fire.play("Fire")
-	fire2.play("Fire")
-	fire3.play("Fire")
-	sm.play("Smoke")
+	$ParallaxBackground/EnemyAnimations/AnimatedSprite2D.play("Fire")
+	$ParallaxBackground/EnemyAnimations/AnimatedSprite2D2.play("Fire")
+	$ParallaxBackground/EnemyAnimations/AnimatedSprite2D3.play("Fire")
+	$ParallaxBackground/Background/Smoke1.play("Smoke")
 	$ParallaxBackground/EnemyAnimations/Smoke2.play("Smoke")
 	
 	$ParallaxBackground/EnemyAnimations/AnimatedSprite2D.play("Fire")
@@ -39,3 +30,7 @@ func _on_caída_body_entered(body: CharacterBody2D) -> void:
 
 func _on_normal_v_body_entered(body: CharacterBody2D) -> void:
 	body.normalvelo()
+
+func _on_area_2d_2_body_entered(body: CharacterBody2D) -> void:
+	
+	get_tree().change_scene_to_file("res://Flood world/worldflood.tscn")
