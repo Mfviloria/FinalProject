@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3dpmx7drtneu"
-path="res://.godot/imported/Marine.png-2245021150271cef3b2db8f4659c64b4.ctex"
+uid="uid://casdqjgbk1f06"
+path="res://.godot/imported/TrashShorter.png-863174011d8215c5e4e65e97539fa564.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Swimturtle MiniGame/Marine.png"
-dest_files=["res://.godot/imported/Marine.png-2245021150271cef3b2db8f4659c64b4.ctex"]
+source_file="res://Swimturtle MiniGame/TrashShorter.png"
+dest_files=["res://.godot/imported/TrashShorter.png-863174011d8215c5e4e65e97539fa564.ctex"]
 
 [params]
 

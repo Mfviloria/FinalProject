@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5eai574p8naf"]
+
+[ext_resource type="Texture2D" uid="uid://5xcedaj7gjll" path="res://Swimturtle MiniGame/ChatGPT Image Jun 1, 2025, 02_40_02 PM.png" id="1_3ve80"]
+[ext_resource type="Script" uid="uid://bryb2otb1emq3" path="res://Swimturtle MiniGame/area_2d.gd" id="1_oymch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oymch"]
+size = Vector2(1163, 54)
+
+[node name="Ground" type="Area2D"]
+script = ExtResource("1_oymch")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1734, 238)
+scale = Vector2(1.12891, 1)
+texture = ExtResource("1_3ve80")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 238)
+scale = Vector2(1.12891, 1)
+texture = ExtResource("1_3ve80")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(574, 624)
+shape = SubResource("RectangleShape2D_oymch")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

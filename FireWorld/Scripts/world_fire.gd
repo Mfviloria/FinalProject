@@ -31,8 +31,11 @@ func _on_caída_area_entered(area: Area2D) -> void:
 func _on_velocity_body_entered(body: CharacterBody2D) -> void:
 	body.aumentvelo()
 
-func _on_normal_v_body_entered(body: CharacterBody2D) -> void:
-	body.normalvelo()
+
 
 func _on_caída_body_entered(body: CharacterBody2D) -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_normal_v_body_entered(body: CharacterBody2D) -> void:
+	body.normalvelo()
