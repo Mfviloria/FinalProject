@@ -10,7 +10,7 @@ var character = [
 	preload("res://Animations/SowrdsmanAnimations.tres")
 ]
 
-
+#hola
 func setCurrentPlayer(player):
 	currentPlayer = player
 
