@@ -27,7 +27,7 @@ func _ready() -> void:
 
 func take_damage(enemyposx, damage):
 	if position.x < enemyposx:
-		knockback_force = Vector2(300, -130)
+		knockback_force = Vector2(-300, -130)
 	else:
 		knockback_force = Vector2(-300, -130)
 	knockback_timer = 0.2
@@ -85,6 +85,7 @@ func revivir():
 
 func jump(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		GlobalAudioManager.play(preload("res://audio_up_.mp3"))
 		velocity.y = -_jump_speed
 	
 	if not is_on_floor():
@@ -97,7 +98,9 @@ func flip():
 	if input_axis < 0 and is_facing_right:
 		animated_sprite.flip_h = true
 		is_facing_right = false
+		GlobalAudioManager.play(preload("res://audio_left_.mp3"))
 	elif input_axis > 0 and not is_facing_right:
+		GlobalAudioManager.play(preload("res://audio_right_.mp3"))
 		animated_sprite.flip_h = false
 		is_facing_right = true
 

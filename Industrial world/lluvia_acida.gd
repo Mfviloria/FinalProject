@@ -13,6 +13,7 @@ var player = null
 func _ready():
 	add_to_group("Lluvia")
 	$lluvia.play("default")
+	GlobalAudioManager.play(preload("res://rain_sound.wav"))
 
 func _physics_process(delta):
 	# Mover la lluvia

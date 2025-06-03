@@ -3,6 +3,7 @@ extends Node2D
 
 
 func _ready():
+	GlobalAudioManager.play(preload("res://fire_sound.wav"))
 	$AnimatedSprite2D.play("Fire")
 
 

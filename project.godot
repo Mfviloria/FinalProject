@@ -20,7 +20,7 @@ config/icon="res://FireWorld/icon.svg"
 Global="*res://FireWorld/Scripts/Global.gd"
 GlobalSceneManager="*res://globalSceneManager.gd"
 GlobalSystemLife="*res://GlobalSystemLife.gd"
-Checkpoint="*res://checkpoint.gd"
+GlobalAudioManager="*res://GlobalAudioManager.gd"
 
 [display]
 

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckqvdowr2eemf"]
+
+[ext_resource type="Script" uid="uid://b0igm8g4jxpwh" path="res://fallingobject.gd" id="1_j2xm2"]
+[ext_resource type="Texture2D" uid="uid://cu6qgps122c4t" path="res://imagen/Arbusto digital en estilo retro.png" id="2_1skn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kwb6"]
+size = Vector2(91, 89)
+
+[node name="Fallingobject" type="Area2D"]
+script = ExtResource("1_j2xm2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(107, -73)
+scale = Vector2(0.136475, 0.141357)
+texture = ExtResource("2_1skn4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(102.5, -69.5)
+shape = SubResource("RectangleShape2D_4kwb6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

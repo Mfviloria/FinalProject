@@ -14,6 +14,7 @@ func reset():
 	emit_signal("health_changed", health)
 
 func take_damage(damage: int):
+	GlobalAudioManager.play(preload("res://sonido_herido.mp3"))
 	if is_dead:
 		return
 	health -= damage

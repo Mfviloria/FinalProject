@@ -201,16 +201,16 @@ size = Vector2(999, 197)
 size = Vector2(998, 286)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20bl7"]
-size = Vector2(267, 371.75)
+size = Vector2(267, 351.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msi6r"]
 size = Vector2(349, 456.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5d5jn"]
-size = Vector2(1953, 592)
+size = Vector2(1953, 524)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pbi0v"]
-size = Vector2(394.25, 532)
+size = Vector2(394.25, 472)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejwn"]
 size = Vector2(50, 31.0311)
@@ -237,7 +237,7 @@ position = Vector2(2934, 222)
 position = Vector2(2984, 224)
 
 [node name="Fire3" parent="." instance=ExtResource("22_d3vie")]
-position = Vector2(5375, 223)
+position = Vector2(5357, 222)
 
 [node name="Fire4" parent="." instance=ExtResource("22_d3vie")]
 position = Vector2(5086, 224)
@@ -246,6 +246,11 @@ position = Vector2(5086, 224)
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1150, 0)
+
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(578, 164)
+scale = Vector2(0.5625, 0.490723)
+texture = ExtResource("2_qejwn")
 
 [node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/Background"]
 position = Vector2(583, 219)
@@ -437,23 +442,23 @@ scale = Vector2(1.48844, 1.06128)
 texture = ExtResource("18_kl1wq")
 
 [node name="Sprite2D18" type="Sprite2D" parent="ParallaxBackground/Platforms"]
-position = Vector2(22016, 491)
-scale = Vector2(1.35579, 1.38086)
+position = Vector2(22016, 507)
+scale = Vector2(1.35579, 1.34961)
 texture = ExtResource("19_aqdvx")
 
 [node name="Sprite2D19" type="Sprite2D" parent="ParallaxBackground/Platforms"]
-position = Vector2(22477, 418)
-scale = Vector2(1.76082, 1.67952)
+position = Vector2(22477, 464.957)
+scale = Vector2(1.76082, 1.58781)
 texture = ExtResource("19_aqdvx")
 
 [node name="Sprite2D20" type="Sprite2D" parent="ParallaxBackground/Platforms"]
-position = Vector2(25344, 386)
-scale = Vector2(2.8843, 1.97059)
+position = Vector2(25344, 437.971)
+scale = Vector2(2.8843, 1.86908)
 texture = ExtResource("18_kl1wq")
 
 [node name="Sprite2D21" type="Sprite2D" parent="ParallaxBackground/Platforms"]
-position = Vector2(25310, 381)
-scale = Vector2(2.04628, 2.03556)
+position = Vector2(25310, 433.103)
+scale = Vector2(2.04628, 1.9338)
 texture = ExtResource("19_aqdvx")
 
 [node name="Node2D" parent="." instance=ExtResource("2_ane1y")]
@@ -556,19 +561,19 @@ position = Vector2(21297, 642)
 shape = SubResource("RectangleShape2D_4oieo")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(22186, 601.875)
+position = Vector2(22186, 611.875)
 shape = SubResource("RectangleShape2D_20bl7")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(22703, 556.25)
+position = Vector2(22703, 611)
 shape = SubResource("RectangleShape2D_msi6r")
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(24098.5, 585)
+position = Vector2(24098.5, 619)
 shape = SubResource("RectangleShape2D_5d5jn")
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(25566.9, 538)
+position = Vector2(25566.9, 568)
 shape = SubResource("RectangleShape2D_pbi0v")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -761,8 +766,11 @@ position = Vector2(24905, 268)
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(25969, 551)
+position = Vector2(25971, 773)
 shape = SubResource("RectangleShape2D_1p06f")
+
+[node name="Fire25" parent="." instance=ExtResource("22_d3vie")]
+position = Vector2(5393, 226)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

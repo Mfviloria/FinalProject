@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuu0gdg07j32l"]
+
+[ext_resource type="Script" uid="uid://cnqipxk147or8" path="res://fallingobject_2.gd" id="1_xi1kd"]
+[ext_resource type="Texture2D" uid="uid://bq8jx5ivtbu2m" path="res://imagen/Personaje de llama travieso.png" id="2_r0xn1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bk8r0"]
+size = Vector2(111, 84)
+
+[node name="Fallingobject2" type="Area2D"]
+script = ExtResource("1_xi1kd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(686, -128)
+scale = Vector2(0.117188, 0.0878906)
+texture = ExtResource("2_r0xn1")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(746.5, -78)
+shape = SubResource("RectangleShape2D_bk8r0")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

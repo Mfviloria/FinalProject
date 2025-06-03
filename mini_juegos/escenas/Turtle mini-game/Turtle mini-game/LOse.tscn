@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1lbs62tx2h7x"]
+
+[ext_resource type="Script" uid="uid://6sjunfmliaxk" path="res://mini_juegos/escenas/Turtle mini-game/Turtle mini-game/l_ose.gd" id="1_8j8px"]
+[ext_resource type="Texture2D" uid="uid://il06h3s7o3h0" path="res://mini_juegos/escenas/Turtle mini-game/Turtle mini-game/ChatGPT Image Jun 1, 2025, 02_33_16 PM.png" id="1_t1yoc"]
+[ext_resource type="Texture2D" uid="uid://bifwg25goe1os" path="res://mini_juegos/escenas/Turtle mini-game/Turtle mini-game/ChatGPT Image Jun 1, 2025, 01_34_04 PM.png" id="2_8j8px"]
+
+[node name="Lose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8j8px")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574, 426)
+scale = Vector2(1.125, 0.953125)
+texture = ExtResource("1_t1yoc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.0
+offset_right = 217.0
+offset_bottom = 124.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 90
+text = "YOU LOSE"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(542, 298)
+scale = Vector2(1.23, 1.235)
+texture = ExtResource("2_8j8px")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = 103.0
+offset_right = 206.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "No extra lives earned"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 521.0
+offset_right = 684.0
+offset_bottom = 592.0
+theme_override_font_sizes/font_size = 40
+text = "Continue
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
