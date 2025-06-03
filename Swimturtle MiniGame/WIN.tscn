@@ -91,3 +91,5 @@ offset_bottom = 593.0
 theme_override_font_sizes/font_size = 40
 text = "Continue
 "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

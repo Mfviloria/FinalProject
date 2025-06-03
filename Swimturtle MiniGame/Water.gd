@@ -53,7 +53,7 @@ func _process(delta):
 		scroll += ScrollSpeed *delta
 		if scroll >= screen_size.x:
 			scroll = 0
-		$Ground.position.x = -scroll
+		$Ground.position.x = -scroll*12
 		for pipe in pipes:
 			pipe.position.x -= ScrollSpeed
 		for plast in plastics:
@@ -123,8 +123,7 @@ func stop_game():
 func trash_hit():
 	$CharacterBody2D.falling = true
 	stop_game()
-
-
+	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://Swimturtle MiniGame/LOse.tscn")

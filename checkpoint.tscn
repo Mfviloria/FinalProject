@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d25q4f5bfjnqj"]
+
+[sub_resource type="GDScript" id="GDScript_njsvn"]
+script/source = "extends Area2D
+
+
+
+func _on_body_entered(body: CharacterBody2D) -> void:
+	print(\"Must checkpoint\")
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_luqgl"]
+radius = 27.0
+height = 878.0
+
+[node name="Checkpoint" type="Area2D"]
+script = SubResource("GDScript_njsvn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(236, 266)
+shape = SubResource("CapsuleShape2D_luqgl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

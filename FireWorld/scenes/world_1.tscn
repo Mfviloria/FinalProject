@@ -45,10 +45,10 @@ shape = SubResource("RectangleShape2D_77kw0")
 position = Vector2(-139, 323)
 shape = SubResource("RectangleShape2D_ol31w")
 
-[node name="Node2D" parent="." instance=ExtResource("5_kwwa1")]
-
 [node name="Door" parent="." instance=ExtResource("7_ol31w")]
 position = Vector2(524, -91)
+
+[node name="Node2D" parent="." instance=ExtResource("5_kwwa1")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -65,5 +65,9 @@ offset_top = 27.0
 offset_right = 132.0
 offset_bottom = 61.0
 text = "Volver"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

@@ -3,7 +3,9 @@ extends Node2D
 var count = 0
 var firegrown
 
+
 func _ready():
+	
 	$ParallaxBackground/EnemyAnimations/AnimatedSprite2D.play("Fire")
 	$ParallaxBackground/EnemyAnimations/AnimatedSprite2D2.play("Fire")
 	$ParallaxBackground/EnemyAnimations/AnimatedSprite2D3.play("Fire")
@@ -32,5 +34,9 @@ func _on_normal_v_body_entered(body: CharacterBody2D) -> void:
 	body.normalvelo()
 
 func _on_area_2d_2_body_entered(body: CharacterBody2D) -> void:
-	
 	get_tree().change_scene_to_file("res://Flood world/worldflood.tscn")
+
+
+func _on_button_2_pressed() -> void:
+	$CanvasLayer/Sprite2D.visible = false
+	$CanvasLayer/Button2.visible = false

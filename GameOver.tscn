@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://bshnwuyqya2fh"]
+
+[ext_resource type="Script" uid="uid://e8rh76ydjmc5" path="res://GameOver.gd" id="1_40baj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1htc"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eksk4"]
+bg_color = Color(0.246347, 0.368082, 0.112785, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_40baj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -50.0
+offset_top = -105.0
+offset_right = 1202.0
+offset_bottom = 695.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a1htc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -263.0
+offset_top = 8.0
+offset_right = 253.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 90
+text = "GAME OVER"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = 75.0
+offset_right = 561.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Reset the world or test your luck
+ in a random minigame to grab 2 bonus lives!"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 536.0
+offset_right = 505.0
+offset_bottom = 605.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_eksk4")
+text = "Play"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 537.0
+offset_right = 851.0
+offset_bottom = 606.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_eksk4")
+text = "Reset
+"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

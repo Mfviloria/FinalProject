@@ -1,7 +1,7 @@
-[gd_scene load_steps=61 format=3 uid="uid://c1xuytwx6nh6c"]
+[gd_scene load_steps=64 format=3 uid="uid://c1xuytwx6nh6c"]
 
 [ext_resource type="Script" uid="uid://yx44yy6jp438" path="res://Flood world/WORLDFLOO.gd" id="1_c8xee"]
-[ext_resource type="Texture2D" uid="uid://cgjmsa1yehkgy" path="res://Flood world/mundo_plastic.png" id="2_l7vfc"]
+[ext_resource type="Texture2D" uid="uid://2qtbqnlnm66r" path="res://Flood world/1000276027.jpeg" id="2_l7vfc"]
 [ext_resource type="Texture2D" uid="uid://b2i0rjp7ftqvp" path="res://Flood world/2.png" id="3_4plkj"]
 [ext_resource type="Texture2D" uid="uid://chh1gxmjennko" path="res://Flood world/islas_plastic/1.png" id="4_q1qlj"]
 [ext_resource type="Texture2D" uid="uid://whrrlrhgiy7l" path="res://Flood world/obstaculos_ocean/Petroleo/1.png" id="5_otgl6"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://c1xwnln0hitbb" path="res://Flood world/bolsa_2.tscn" id="23_tbnnc"]
 [ext_resource type="AudioStream" uid="uid://cjbguucryynhp" path="res://Flood world/musica_fondo.mp3" id="24_6cn58"]
 [ext_resource type="Script" uid="uid://c8mmuyr1ud8bc" path="res://Flood world/obstaculos.gd" id="24_l7vfc"]
+[ext_resource type="Texture2D" uid="uid://cgjmsa1yehkgy" path="res://Flood world/mundo_plastic.png" id="25_q1qlj"]
+[ext_resource type="Script" uid="uid://baytlryb0aua2" path="res://Flood world/cambio.gd" id="26_4plkj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cdf0i"]
 animations = [{
@@ -98,10 +100,10 @@ size = Vector2(400, 97)
 size = Vector2(203, 79.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eustv"]
-size = Vector2(174, 90)
+size = Vector2(170, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1louc"]
-size = Vector2(227, 98)
+size = Vector2(219, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kl1wq"]
 size = Vector2(202, 93.5)
@@ -183,6 +185,9 @@ size = Vector2(1487.91, 300.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrgj3"]
 size = Vector2(20459.2, 308)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7vfc"]
+size = Vector2(248, 450)
 
 [node name="FLOODWORLD" type="Node2D"]
 script = ExtResource("1_c8xee")
@@ -482,11 +487,11 @@ position = Vector2(3283, 657)
 shape = SubResource("RectangleShape2D_t18ap")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1481, 810)
+position = Vector2(1483, 810)
 shape = SubResource("RectangleShape2D_eustv")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1747.5, 761)
+position = Vector2(1751.5, 761)
 shape = SubResource("RectangleShape2D_1louc")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
@@ -691,6 +696,19 @@ offset_right = 141.0
 offset_bottom = 42.0
 text = "Volver"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(982.333, 330)
+scale = Vector2(0.166341, 0.323242)
+texture = ExtResource("25_q1qlj")
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 826.0
+offset_top = 24.0
+offset_right = 868.0
+offset_bottom = 55.0
+text = "Quit
+"
+
 [node name="Caída" type="Area2D" parent="."]
 position = Vector2(80, 19)
 
@@ -783,11 +801,21 @@ stream = ExtResource("24_6cn58")
 volume_db = -18.739
 autoplay = true
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("26_4plkj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18202, 406)
+shape = SubResource("RectangleShape2D_l7vfc")
+
 [connection signal="area_entered" from="Obstaculos" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Obstaculos" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Obstaculos" to="Obstaculos" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="area_entered" from="Caída" to="." method="_on_caída_area_entered"]
 [connection signal="body_entered" from="Caída" to="." method="_on_caída_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

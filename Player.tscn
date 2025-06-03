@@ -56,9 +56,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqjt"]
-size = Vector2(74, 174)
+size = Vector2(40, 174)
 
-[node name="Node2D" type="Node2D"]
+[node name="Player" type="Node2D"]
 script = ExtResource("1_kne1u")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -74,7 +74,7 @@ scale = Vector2(2.19141, 2.30469)
 sprite_frames = SubResource("SpriteFrames_tdg3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(241, 395)
+position = Vector2(240, 395)
 shape = SubResource("RectangleShape2D_dtqjt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D"]

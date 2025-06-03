@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://c163jcqhx0lj8"]
+[gd_scene load_steps=66 format=3 uid="uid://c163jcqhx0lj8"]
 
 [ext_resource type="Script" uid="uid://ccqsuojk50i6t" path="res://FireWorld/Scripts/FIREWORLD.gd" id="1_qejwn"]
 [ext_resource type="PackedScene" uid="uid://dmhsetshjv1by" path="res://Player.tscn" id="2_ane1y"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bhvjqtk716jht" path="res://FireWorld/sprites/Shortplatforms.png" id="19_aqdvx"]
 [ext_resource type="PackedScene" uid="uid://bnc6m3ucq817b" path="res://FireWorld/scenes/FireTree.tscn" id="21_aqdvx"]
 [ext_resource type="PackedScene" uid="uid://dunq2t1ksi41c" path="res://FireWorld/scenes/fire.tscn" id="22_d3vie"]
+[ext_resource type="Texture2D" uid="uid://clhffro6bl8au" path="res://FireWorld/sprites/Images/ChatGPT Image May 14, 2025, 08_50_34 PM.png" id="23_ip27p"]
 [ext_resource type="PackedScene" uid="uid://bu8sn6fg6575q" path="res://FireWorld/Firegrwon.tscn" id="24_l3eta"]
 [ext_resource type="PackedScene" uid="uid://h1tnnfjb8q3c" path="res://FireWorld/scenes/firebodyfaster.tscn" id="25_piqhw"]
 
@@ -179,7 +180,7 @@ size = Vector2(7442.5, 56)
 size = Vector2(107.5, 115)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivua1"]
-size = Vector2(161, 121)
+size = Vector2(161, 151.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_didsw"]
 size = Vector2(671, 265)
@@ -191,7 +192,7 @@ size = Vector2(160, 181)
 size = Vector2(462.75, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8c52"]
-size = Vector2(142, 196)
+size = Vector2(142, 202)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3oja"]
 size = Vector2(999, 197)
@@ -200,16 +201,16 @@ size = Vector2(999, 197)
 size = Vector2(998, 286)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20bl7"]
-size = Vector2(267, 354.75)
+size = Vector2(267, 371.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msi6r"]
-size = Vector2(349, 451.5)
+size = Vector2(349, 456.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5d5jn"]
 size = Vector2(1953, 592)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pbi0v"]
-size = Vector2(394.25, 504.75)
+size = Vector2(394.25, 532)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejwn"]
 size = Vector2(50, 31.0311)
@@ -511,7 +512,7 @@ position = Vector2(5245.25, 726.5)
 shape = SubResource("RectangleShape2D_fxw2b")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(5495, 699.25)
+position = Vector2(5495, 683.875)
 shape = SubResource("RectangleShape2D_ivua1")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
@@ -519,11 +520,11 @@ position = Vector2(6058.5, 651.5)
 shape = SubResource("RectangleShape2D_didsw")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(6647, 474)
+position = Vector2(6647, 491)
 shape = SubResource("RectangleShape2D_ivua1")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(7529, 727.5)
+position = Vector2(7526, 744)
 shape = SubResource("RectangleShape2D_ivua1")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
@@ -539,7 +540,7 @@ position = Vector2(18423.6, 730)
 shape = SubResource("RectangleShape2D_3q2bo")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(18930, 688)
+position = Vector2(18930, 685)
 shape = SubResource("RectangleShape2D_x8c52")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
@@ -547,7 +548,7 @@ position = Vector2(19705.5, 690)
 shape = SubResource("RectangleShape2D_n3oja")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(20512, 689)
+position = Vector2(20515, 692)
 shape = SubResource("RectangleShape2D_x8c52")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
@@ -555,11 +556,11 @@ position = Vector2(21297, 642)
 shape = SubResource("RectangleShape2D_4oieo")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(22186, 610.375)
+position = Vector2(22186, 601.875)
 shape = SubResource("RectangleShape2D_20bl7")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(22703, 558.75)
+position = Vector2(22703, 556.25)
 shape = SubResource("RectangleShape2D_msi6r")
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
@@ -567,7 +568,7 @@ position = Vector2(24098.5, 585)
 shape = SubResource("RectangleShape2D_5d5jn")
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(25566.9, 551.625)
+position = Vector2(25566.9, 538)
 shape = SubResource("RectangleShape2D_pbi0v")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -605,6 +606,19 @@ offset_top = 6.0
 offset_right = 141.0
 offset_bottom = 42.0
 text = "Volver"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1012.08, 323)
+scale = Vector2(0.275553, 0.633789)
+texture = ExtResource("23_ip27p")
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 887.0
+offset_top = 18.0
+offset_right = 929.0
+offset_bottom = 49.0
+text = "Quit
+"
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("21_aqdvx")]
 position = Vector2(1736, -48)
@@ -754,6 +768,7 @@ shape = SubResource("RectangleShape2D_1p06f")
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="body_entered" from="Velocity" to="." method="_on_velocity_body_entered"]
 [connection signal="body_entered" from="NormalV" to="." method="_on_velocity_body_entered"]
 [connection signal="body_entered" from="NormalV" to="." method="_on_normal_v_body_entered"]

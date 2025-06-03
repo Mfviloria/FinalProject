@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://s5k86jgnvd1c"]
+
+[ext_resource type="Script" uid="uid://1mg5vgowj5bw" path="res://Industrial world/lluvia_acida.gd" id="1_slbo2"]
+[ext_resource type="Texture2D" uid="uid://dfuxi1qwxsbyq" path="res://Industrial world/lluvia_acida/1.png" id="2_a433x"]
+[ext_resource type="Texture2D" uid="uid://bec0hsk5rqmna" path="res://Industrial world/lluvia_acida/2.png" id="3_5xjx2"]
+[ext_resource type="Texture2D" uid="uid://rkufgbkbmbh0" path="res://Industrial world/lluvia_acida/3.png" id="4_mdrj3"]
+[ext_resource type="Texture2D" uid="uid://do35v2ji0x78b" path="res://Industrial world/lluvia_acida/4.png" id="5_vpat6"]
+[ext_resource type="Texture2D" uid="uid://be8sa1qcddc1n" path="res://Industrial world/nubes/cloud_shape2_2.png" id="6_6h04q"]
+[ext_resource type="Script" uid="uid://cxy2e60y4ycy4" path="res://Industrial world/area_2d.gd" id="7_a433x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1lvh"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_a433x")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_5xjx2")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_mdrj3")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_vpat6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egqnl"]
+size = Vector2(903.5, 1168)
+
+[node name="lluvia_acida" type="Node2D"]
+script = ExtResource("1_slbo2")
+
+[node name="lluvia" type="AnimatedSprite2D" parent="."]
+position = Vector2(389.594, 487.367)
+scale = Vector2(2.77129, 32.1816)
+sprite_frames = SubResource("SpriteFrames_k1lvh")
+frame_progress = 0.179773
+
+[node name="nube" type="Sprite2D" parent="."]
+position = Vector2(389, -183)
+scale = Vector2(5.24634, 6.76087)
+texture = ExtResource("6_6h04q")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("7_a433x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(401.25, 452)
+shape = SubResource("RectangleShape2D_egqnl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
