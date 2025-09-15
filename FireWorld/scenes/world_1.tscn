@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccg7unh6uto8s"]
+[gd_scene load_steps=9 format=3 uid="uid://ccg7unh6uto8s"]
 
 [ext_resource type="Texture2D" uid="uid://b1e6t25jke4uo" path="res://FireWorld/sprites/Images/background.jpg" id="1_4eyuj"]
 [ext_resource type="Script" uid="uid://dlfbwdo4pqg62" path="res://FireWorld/Scripts/world_1.gd" id="1_cmxnd"]
 [ext_resource type="Texture2D" uid="uid://btfxh7d3pdqoo" path="res://FireWorld/sprites/Images/platform.png" id="2_cmxnd"]
 [ext_resource type="PackedScene" uid="uid://dmhsetshjv1by" path="res://Player.tscn" id="5_kwwa1"]
+[ext_resource type="PackedScene" uid="uid://58t5dn3xbx2i" path="res://pausa.tscn" id="6_rgfh0"]
 [ext_resource type="PackedScene" uid="uid://dp16o70o44cpm" path="res://FireWorld/scenes/door.tscn" id="7_ol31w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77kw0"]
@@ -39,10 +40,14 @@ texture = ExtResource("2_cmxnd")
 position = Vector2(2339, 566)
 shape = SubResource("RectangleShape2D_77kw0")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ParallaxBackground/ParallaxLayer2/Ground"]
+position = Vector2(-139, 323)
+shape = SubResource("RectangleShape2D_ol31w")
+
 [node name="RigidBody2D" type="RigidBody2D" parent="ParallaxBackground"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/RigidBody2D"]
-position = Vector2(-139, 323)
+position = Vector2(1807, 322)
 shape = SubResource("RectangleShape2D_ol31w")
 
 [node name="Door" parent="." instance=ExtResource("7_ol31w")]
@@ -52,6 +57,10 @@ position = Vector2(524, -91)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Pausa" parent="CanvasLayer" instance=ExtResource("6_rgfh0")]
+offset_left = -2.0
+offset_right = -2.0
+
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 visible = false
 offset_left = -1.0
@@ -60,11 +69,27 @@ offset_right = 1158.0
 offset_bottom = 651.0
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 31.0
+offset_left = 85.0
 offset_top = 27.0
 offset_right = 132.0
 offset_bottom = 61.0
-text = "Volver"
+text = "II"
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+offset_left = -46.0
+offset_top = 527.0
+offset_right = 1701.0
+offset_bottom = 699.0
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = -225.0
+offset_top = 536.0
+offset_right = 1383.0
+offset_bottom = 649.0
+theme_override_font_sizes/font_size = 40
+text = "To play this game, you can use the arrow keys or WASD
+ to move around the worlds!"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0

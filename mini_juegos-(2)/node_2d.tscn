@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://wgb178u1tmc5"]
+
+[ext_resource type="Script" uid="uid://c47snn5jk7qqc" path="res://mini_juegos-(2)/node_2d.gd" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://6mqcmy2jv76a" path="res://mini_juegos-(2)/imagen/ruleta_new.png" id="2_epypp"]
+[ext_resource type="Script" uid="uid://diuutj66uvvvb" path="res://mini_juegos-(2)/ruleta.gd" id="3_0hol4"]
+[ext_resource type="Script" uid="uid://buk5js0tvsfmj" path="res://mini_juegos-(2)/area_2d.gd" id="4_0hol4"]
+
+[node name="Ruleta" type="Node2D"]
+position = Vector2(482, 298)
+script = ExtResource("1_epypp")
+
+[node name="Ruleta" type="Sprite2D" parent="."]
+position = Vector2(2, 2)
+scale = Vector2(0.718445, 0.627441)
+texture = ExtResource("2_epypp")
+script = ExtResource("3_0hol4")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_0hol4")
+
+[node name="CollisionShape2D0" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-84, -129)
+scale = Vector2(2.49654, 0.97769)
+polygon = PackedVector2Array(-69.2959, 261.842, -84.517, 120.693, -59.6826, -22.502, -14.8205, -108.419, 32.4449, -139.103, 32.8455, 128.875)
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D1" type="CollisionPolygon2D" parent="Area2D2"]
+position = Vector2(130.091, -62.4123)
+rotation = 0.0249746
+scale = Vector2(1.58004, 0.988782)
+polygon = PackedVector2Array(-82.0178, 62.3673, -87.2976, -194.384, -26.3373, -182.654, 45.5363, -120.777, 95.107, -27.6591, 106.146, 111.509, 83.3045, 189.307)
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(1, 2)
+
+[node name="CollisionSha2D2" type="CollisionPolygon2D" parent="Area2D4"]
+position = Vector2(-75, -73)
+scale = Vector2(6.23271, 0.955878)
+polygon = PackedVector2Array(13.6377, 356.74, -13.6377, 308.617, -29.3612, 205.047, 11.8728, 73.2311, 54.3905, 213.416, 36.4208, 308.617)

@@ -1,17 +1,22 @@
 extends Control
-
+class_name SelectedCharacter
 @onready var Animated = $Sprite2D2
+var seleceted  = false
 var num = -1
 
+func _ready():
+	$Panel.visible = false
+	$Label.visible = false
 func _on_infrantyman_pressed() -> void:
+	seleceted = true
 	print("Selected Infranty")
 	Animated.flip_h = true
 	Animated.frames = Global.character[0]
 	Animated.play("idle")
 	num = 0
 
-
 func _on_destroyer_pressed() -> void:
+	seleceted = true
 	print("Selected Destroyer")
 	Animated.flip_h = true
 	Animated.frames = Global.character[1]
@@ -19,8 +24,8 @@ func _on_destroyer_pressed() -> void:
 	Global.setCurrentPlayer(Global.character[1])
 	num = 1
 
-
 func _on_swordsman_pressed() -> void:
+	seleceted = true
 	print("Selected Swordsman")
 	Animated.flip_h = true
 	Animated.frames = Global.character[2]
@@ -29,9 +34,16 @@ func _on_swordsman_pressed() -> void:
 	num = 2
 	
 func _on_select_pressed() -> void:
-	Global.selected = num
-	get_tree().change_scene_to_file("res://FireWorld/scenes/world_1.tscn")
-	
+	if seleceted:
+		Global.selected = num
+		get_tree().change_scene_to_file("res://FireWorld/scenes/world_1.tscn")
+	else:
+		$Panel.visible = true
+		$Label.visible = true
+		await get_tree().create_timer(4.0).timeout
+		$Panel.visible = false
+		$Label.visible = false
+		
 	
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://FireWorld/scenes/control.tscn")

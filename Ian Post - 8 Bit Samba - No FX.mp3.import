@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjjn2uo7t8uo8"
+path="res://.godot/imported/Ian Post - 8 Bit Samba - No FX.mp3-296d008407649e014386c12564fa3589.mp3str"
+
+[deps]
+
+source_file="res://Ian Post - 8 Bit Samba - No FX.mp3"
+dest_files=["res://.godot/imported/Ian Post - 8 Bit Samba - No FX.mp3-296d008407649e014386c12564fa3589.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

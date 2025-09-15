@@ -83,6 +83,25 @@ offset_right = 141.0
 offset_bottom = 42.0
 text = "Volver"
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 196.0
+offset_right = 704.0
+offset_bottom = 400.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 208.0
+offset_right = 711.0
+offset_bottom = 379.0
+theme_override_font_sizes/font_size = 40
+text = "You have 
+to select a 
+character"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Infrantyman" to="." method="_on_infrantyman_pressed"]
 [connection signal="pressed" from="Destroyer" to="." method="_on_destroyer_pressed"]
 [connection signal="pressed" from="Swordsman" to="." method="_on_swordsman_pressed"]

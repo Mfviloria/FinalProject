@@ -1,4 +1,5 @@
 extends Node
+class_name SystemLife
 
 signal health_changed(new_health)
 
@@ -14,13 +15,14 @@ func reset():
 	emit_signal("health_changed", health)
 
 func take_damage(damage: int):
-	GlobalAudioManager.play(preload("res://sonido_herido.mp3"))
+	GlobalAudioManager.play_sfx(preload("res://sonido_herido.mp3"))
 	if is_dead:
 		return
 	health -= damage
 	if health <= 0:
 		health = 0
 		is_dead = true
+		GlobalAudioManager.play_sfx(preload("res://mini_juegos-(2)/escenas/Turtle mini-game/Turtle mini-game/failure-1-89170.mp3"))
 	emit_signal("health_changed", health)
 	
 func resetminigame():

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="ProjectTry1"
+config/name="Gaia's Guardians"
 run/main_scene="uid://bx07hvmw26mm"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://FireWorld/icon.svg"
@@ -24,7 +24,12 @@ GlobalAudioManager="*res://GlobalAudioManager.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
+
+[global_group]
+
+Player=""
 
 [input]
 
@@ -62,3 +67,4 @@ Interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true

@@ -1,5 +1,5 @@
 extends Node
-
+class_name SceneManager
 var previous_scene: Node = null
 
 func change_to_scene(scene_path: String):

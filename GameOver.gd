@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://mini_juegos/escenas/escenario.tscn")
+	get_tree().change_scene_to_file("res://mini_juegos-(2)/escenas/escenario.tscn")
 	
 func _on_button_2_pressed() -> void:
 	GlobalSystemLife.reset()

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://byir3ajjs6uvx"]
+
+[ext_resource type="Script" uid="uid://cy5kaftaw0wef" path="res://mini_juegos-(2)/manecilla.gd" id="1_scp20"]
+[ext_resource type="Texture2D" uid="uid://cne676i5l8b58" path="res://mini_juegos-(2)/imagen/Flecha.png" id="2_nb7k8"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7k3no"]
+a = Vector2(1.40746, 0.138082)
+b = Vector2(257.908, 7.52817)
+
+[node name="manecilla" type="Area2D"]
+script = ExtResource("1_scp20")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -98)
+rotation = -1.52952
+scale = Vector2(0.405476, 0.278656)
+texture = ExtResource("2_nb7k8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+rotation = -1.58835
+shape = SubResource("SegmentShape2D_7k3no")

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var speed: float = 200.0
+@export var speed: float = 300.0
 @export var world_width: float = 43595.0
 @export var damage_amount: int = 2
 @export var damage_interval: float = 1.0
@@ -13,7 +13,7 @@ var player = null
 func _ready():
 	add_to_group("Lluvia")
 	$lluvia.play("default")
-	GlobalAudioManager.play(preload("res://rain_sound.wav"))
+	GlobalAudioManager.play_music(preload("res://rain_sound.wav"))
 
 func _physics_process(delta):
 	# Mover la lluvia

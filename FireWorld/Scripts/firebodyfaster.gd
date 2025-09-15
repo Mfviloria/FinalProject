@@ -35,7 +35,13 @@ func spawn_explosion():
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	has_landed = true
+	if area.is_in_group("Floor"):
+		has_landed = true
+	if area.is_in_group("Player"):
+		$AnimatedSprite2D.visible = false
+		$AnimatedSprite2D2.visible = false
+		$FallingTree.visible = false
+		has_landed = false
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

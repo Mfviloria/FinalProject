@@ -6,6 +6,7 @@ var direction = Vector2(1, 1).normalized()
 var has_landed = false
 var explosion_spawned = false 
 var falling = false
+var explosion_sound = preload("res://explosion-312361.mp3")
 
 
 func _ready():
@@ -32,6 +33,7 @@ func spawn_explosion():
 	$FallingTree.visible = false
 	$AnimatedSprite2D.visible=true
 	$AnimatedSprite2D.play("explosion")
+	GlobalAudioManager.play_sfx(explosion_sound)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	has_landed = true

@@ -85,9 +85,8 @@ func revivir():
 
 func jump(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		GlobalAudioManager.play(preload("res://audio_up_.mp3"))
+		GlobalAudioManager.play_sfx(preload("res://audio_up_.mp3"))
 		velocity.y = -_jump_speed
-	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -96,18 +95,18 @@ func flip():
 		return
 	var input_axis = Input.get_axis("move_left", "move_right")
 	if input_axis < 0 and is_facing_right:
+		GlobalAudioManager.play_sfx(preload("res://audio_left_.mp3"))
 		animated_sprite.flip_h = true
 		is_facing_right = false
-		GlobalAudioManager.play(preload("res://audio_left_.mp3"))
 	elif input_axis > 0 and not is_facing_right:
-		GlobalAudioManager.play(preload("res://audio_right_.mp3"))
+		GlobalAudioManager.play_sfx(preload("res://audio_right_.mp3"))
 		animated_sprite.flip_h = false
 		is_facing_right = true
 
 func move_x():
 	var input_axis = Input.get_axis("move_left", "move_right")
 	velocity.x = input_axis * _move_speed
-
+	
 func aumentvelo():
 	_move_speed = speedaum
 	_jump_speed = 490

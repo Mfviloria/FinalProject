@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2rsdnq8lweii"
+path="res://.godot/imported/ruleta (mp3cut.net).mp3-c6d17c2c8fb701a2e2bbc41ed1fa7ee1.mp3str"
+
+[deps]
+
+source_file="res://mini_juegos-(2)/ruleta (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/ruleta (mp3cut.net).mp3-c6d17c2c8fb701a2e2bbc41ed1fa7ee1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://58t5dn3xbx2i"]
+
+[ext_resource type="Script" uid="uid://v0muongr6mrg" path="res://pausa.gd" id="1_wk6u8"]
+[ext_resource type="Texture2D" uid="uid://bdjl20gpe04p" path="res://PAUSE.png" id="2_4gdby"]
+[ext_resource type="Texture2D" uid="uid://dpt47i6aafqr" path="res://musicicon.png" id="3_i80os"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wk6u8"]
+bg_color = Color(2.16588e-07, 0.217296, 0.136045, 1)
+corner_detail = 10
+
+[sub_resource type="Theme" id="Theme_i80os"]
+
+[node name="Pausa" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wk6u8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.75, 324)
+scale = Vector2(0.130456, 0.115344)
+texture = ExtResource("2_4gdby")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -107.0
+offset_right = -164.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wk6u8")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -111.0
+offset_right = 61.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "PAUSE"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.261
+anchor_bottom = 0.301
+offset_left = 553.0
+offset_top = 375.0
+offset_right = 289.328
+offset_bottom = 210.952
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit
+"
+
+[node name="Continue" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.261
+anchor_bottom = 0.301
+offset_left = 533.0
+offset_top = 287.0
+offset_right = 311.328
+offset_bottom = 122.952
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue
+"
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.261
+anchor_bottom = 0.301
+offset_left = 538.0
+offset_top = 331.0
+offset_right = 307.328
+offset_bottom = 166.952
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart
+"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13
+anchor_top = 0.333
+anchor_right = 0.13
+anchor_bottom = 0.333
+offset_left = 229.24
+offset_top = 0.216003
+offset_right = 269.24
+offset_bottom = 40.216
+theme = SubResource("Theme_i80os")
+texture_normal = ExtResource("3_i80os")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

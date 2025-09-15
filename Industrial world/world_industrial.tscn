@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://voxfgh5vxmcj"]
+[gd_scene load_steps=108 format=3 uid="uid://voxfgh5vxmcj"]
 
 [ext_resource type="Script" uid="uid://bi5bvqy7b826l" path="res://Industrial world/INDUSTRIALWORLD.gd" id="1_16b7x"]
 [ext_resource type="Texture2D" uid="uid://cu2qhu3gwcsrr" path="res://Industrial world/Ciudad industrial bajo cielo nublado.png" id="2_5spf1"]
@@ -11,9 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://bgwxxo3vbqbdj" path="res://Industrial world/sierra/sierra4.png" id="6_uefxi"]
 [ext_resource type="Texture2D" uid="uid://cgf7jlmqkmx6d" path="res://Industrial world/warning.png" id="7_r30ps"]
 [ext_resource type="Texture2D" uid="uid://bvioke3wm2tf4" path="res://Industrial world/sierra/sierra5.png" id="7_vx002"]
+[ext_resource type="PackedScene" uid="uid://58t5dn3xbx2i" path="res://pausa.tscn" id="8_4aptn"]
 [ext_resource type="Script" uid="uid://unby6vui3uem" path="res://Industrial world/sierra.gd" id="8_jecc5"]
 [ext_resource type="Texture2D" uid="uid://egqh6fxsvrnw" path="res://Industrial world/sierra/sierra6.png" id="8_r30ps"]
+[ext_resource type="Texture2D" uid="uid://upoitlikqkwe" path="res://Winner/Metropolis.png" id="9_jqlv4"]
+[ext_resource type="Texture2D" uid="uid://cuwp3wcx68y4y" path="res://Final.png" id="10_6exqw"]
+[ext_resource type="Texture2D" uid="uid://qey68ws7ckc8" path="res://Banner_GG (1)/5.png" id="10_74njm"]
 [ext_resource type="PackedScene" uid="uid://dmhsetshjv1by" path="res://Player.tscn" id="12_1psrt"]
+[ext_resource type="Texture2D" uid="uid://b3c180r3t2ikg" path="res://Banner_GG (1)/6.png" id="12_bulc0"]
+[ext_resource type="Texture2D" uid="uid://bl2raofapjkkm" path="res://IndustrialCrystal.png" id="18_jqlv4"]
 [ext_resource type="Script" uid="uid://dgtjwf6wbd4t4" path="res://Industrial world/spawn_timer.gd" id="19_pnmh7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dagg"]
@@ -215,7 +221,7 @@ radius = 42.107
 radius = 53.7587
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tu88j"]
-radius = 53.2353
+radius = 51.0392
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3d1l"]
 radius = 43.4166
@@ -294,6 +300,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6exqw"]
+size = Vector2(58.5, 36)
+
 [node name="WorldIndustrial" type="Node2D"]
 script = ExtResource("1_16b7x")
 lluvia_scene = ExtResource("2_uefxi")
@@ -314,7 +323,7 @@ texture = ExtResource("2_5spf1")
 metadata/_edit_lock_ = true
 
 [node name="Node2D" parent="." instance=ExtResource("12_1psrt")]
-position = Vector2(-98, 148)
+position = Vector2(-30, 103)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 z_index = 1
@@ -537,11 +546,11 @@ scale = Vector2(2.05065, 1.91667)
 texture = ExtResource("3_p2wbp")
 
 [node name="TuboDeAluminioCorto11" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(33083, 748)
+position = Vector2(33057, 796)
 texture = ExtResource("4_5spf1")
 
 [node name="TuboDeAluminio12" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(34087, 698)
+position = Vector2(34091, 757)
 scale = Vector2(2.47876, 1.58578)
 texture = ExtResource("3_p2wbp")
 
@@ -551,7 +560,7 @@ scale = Vector2(1.40523, 1.6201)
 texture = ExtResource("3_p2wbp")
 
 [node name="TuboDeAluminioCorto14" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(36064, 812)
+position = Vector2(36042, 814)
 texture = ExtResource("4_5spf1")
 
 [node name="TuboDeAluminio14" type="Sprite2D" parent="StaticBody2D"]
@@ -714,11 +723,11 @@ position = Vector2(30945, 909)
 shape = SubResource("RectangleShape2D_8mis3")
 
 [node name="CollisionShape2D41" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(33082.5, 765.25)
+position = Vector2(33047, 800)
 shape = SubResource("RectangleShape2D_uxjsm")
 
 [node name="CollisionShape2D42" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(34087, 681)
+position = Vector2(34079, 735)
 shape = SubResource("RectangleShape2D_g4kgc")
 
 [node name="CollisionShape2D43" type="CollisionShape2D" parent="StaticBody2D"]
@@ -726,7 +735,7 @@ position = Vector2(35274.5, 872)
 shape = SubResource("RectangleShape2D_ulg0f")
 
 [node name="CollisionShape2D44" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(36069, 826.625)
+position = Vector2(36043, 822)
 shape = SubResource("RectangleShape2D_66kpl")
 
 [node name="CollisionShape2D45" type="CollisionShape2D" parent="StaticBody2D"]
@@ -792,19 +801,21 @@ shape = SubResource("RectangleShape2D_vx002")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_left = -14.0
-offset_top = 2.0
-offset_right = 1300.0
-offset_bottom = 1036.0
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(575, 323.5)
+scale = Vector2(0.453125, 0.406875)
+texture = ExtResource("9_jqlv4")
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 9.0
-offset_top = 11.0
-offset_right = 136.0
-offset_bottom = 47.0
-text = "Volver"
-metadata/_edit_lock_ = true
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(575, 323.5)
+scale = Vector2(0.453125, 0.406875)
+texture = ExtResource("10_6exqw")
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = -26.0
+offset_top = -10.0
+offset_right = 1300.0
+offset_bottom = 1039.0
 
 [node name="warning" type="Sprite2D" parent="CanvasLayer"]
 z_index = -1
@@ -812,18 +823,48 @@ position = Vector2(398, 114)
 scale = Vector2(0.569635, 0.773953)
 texture = ExtResource("7_r30ps")
 
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(963.5, 323.5)
+scale = Vector2(0.374023, 0.316895)
+texture = ExtResource("12_bulc0")
+
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(987, 320)
-scale = Vector2(0.221354, 0.700651)
-texture = ExtResource("2_5spf1")
+position = Vector2(962.5, 323.5)
+scale = Vector2(0.37207, 0.316895)
+texture = ExtResource("10_74njm")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 136.0
+offset_bottom = 47.0
+text = "II
+"
+metadata/_edit_lock_ = true
 
 [node name="Button2" type="Button" parent="CanvasLayer"]
-offset_left = 826.0
-offset_top = 24.0
-offset_right = 868.0
-offset_bottom = 55.0
+offset_left = 774.0
+offset_right = 816.0
+offset_bottom = 31.0
 text = "Quit
 "
+
+[node name="Pausa" parent="CanvasLayer" instance=ExtResource("8_4aptn")]
+offset_right = 3.0
+
+[node name="next" type="Button" parent="CanvasLayer"]
+offset_left = 1108.0
+offset_right = 1153.0
+offset_bottom = 31.0
+text = "Next
+"
+
+[node name="previous" type="Button" parent="CanvasLayer"]
+offset_left = 772.0
+offset_top = -4.0
+offset_right = 847.0
+offset_bottom = 27.0
+text = "Previous"
 
 [node name="Sierra" type="Area2D" parent="."]
 script = ExtResource("8_jecc5")
@@ -870,7 +911,7 @@ position = Vector2(29618, 745)
 shape = SubResource("CircleShape2D_k0gbk")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Sierra"]
-position = Vector2(34285, 624)
+position = Vector2(34279, 679)
 shape = SubResource("CircleShape2D_604j2")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Sierra"]
@@ -878,11 +919,11 @@ position = Vector2(28427, 813)
 shape = SubResource("CircleShape2D_476al")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Sierra"]
-position = Vector2(36073, 729)
+position = Vector2(36042, 730)
 shape = SubResource("CircleShape2D_tu88j")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Sierra"]
-position = Vector2(33668, 624)
+position = Vector2(33664, 682)
 shape = SubResource("CircleShape2D_q3d1l")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Sierra"]
@@ -1132,11 +1173,10 @@ frame_progress = 0.511033
 metadata/_edit_lock_ = true
 
 [node name="sierra26" type="AnimatedSprite2D" parent="ParallaxLayer2"]
-position = Vector2(33665, 589)
+position = Vector2(33664, 655)
 scale = Vector2(0.56153, 0.5)
 sprite_frames = SubResource("SpriteFrames_ldtvr")
 frame_progress = 0.0427116
-metadata/_edit_lock_ = true
 
 [node name="sierra28" type="AnimatedSprite2D" parent="ParallaxLayer2"]
 position = Vector2(58881.7, 1222.4)
@@ -1145,18 +1185,16 @@ sprite_frames = SubResource("SpriteFrames_ldtvr")
 frame_progress = 0.00458792
 
 [node name="sierra29" type="AnimatedSprite2D" parent="ParallaxLayer2"]
-position = Vector2(36081.4, 697)
+position = Vector2(36053, 703)
 scale = Vector2(0.706642, 0.688965)
 sprite_frames = SubResource("SpriteFrames_ldtvr")
 frame_progress = 0.713292
-metadata/_edit_lock_ = true
 
 [node name="sierra30" type="AnimatedSprite2D" parent="ParallaxLayer2"]
-position = Vector2(34289.4, 590)
+position = Vector2(34278, 648)
 scale = Vector2(0.543405, 0.539063)
 sprite_frames = SubResource("SpriteFrames_ldtvr")
 frame_progress = 0.160516
-metadata/_edit_lock_ = true
 
 [node name="sierra31" type="AnimatedSprite2D" parent="ParallaxLayer2"]
 position = Vector2(37636, 744)
@@ -1175,9 +1213,24 @@ metadata/_edit_lock_ = true
 [node name="SpawnTimer" type="Timer" parent="."]
 script = ExtResource("19_pnmh7")
 
+[node name="IndustrialCrystal" type="Sprite2D" parent="."]
+position = Vector2(42341, 630)
+scale = Vector2(0.282295, 0.279167)
+texture = ExtResource("18_jqlv4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(42341, 629)
+shape = SubResource("RectangleShape2D_6exqw")
+
 [connection signal="area_entered" from="Caída" to="." method="_on_caída_area_entered"]
 [connection signal="body_entered" from="Caída" to="." method="_on_caída_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/next" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="CanvasLayer/previous" to="." method="_on_button_3_pressed"]
 [connection signal="body_entered" from="Sierra" to="Sierra" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
